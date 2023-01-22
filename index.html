@@ -1,0 +1,267 @@
+<!--
+  |
+  | 這裡沒啥好看的，只是一些基本的html程式碼
+  | 有時間看這個不如把機器人加到你的伺服器，現在，馬上!
+  |
+  | Free Giveaway 免費抽獎 2023
+  | 機器人由York管理/開發
+  |
+  | 網頁最後更新: 2023/1/22
+  |
+  | "Live a life you will remember" — ◢◤icii
+  |
+-->
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <link rel="shortcut icon" href="./img/" type="image/x-icon">
+    <link rel="icon" href="https://cdn.discordapp.com/attachments/947773974954262588/1035916000090144799/My_project-1.png">
+    <title>免費抽獎 - 一個抽獎機器人</title>
+</head>
+
+<body>
+    <!-- API -->
+    <script>
+        setInterval(() => {
+          fetch("https://Free-Giveaway.york524.repl.co/status")
+            .then((response) => response.json())
+            .then((data) => {
+              document.getElementById("guild-count").innerHTML = data.guildCount;
+              document.getElementById("commands-count").innerHTML = data.Commands;
+              document.getElementById("member-count").innerHTML = data.memberCount;
+            });
+        }, 1000);
+      </script>
+      <!-- END -->
+    <!-- Navbar -->
+
+    <div class="navbar navbar-expand-md bg-dark navbar-dark">
+        <div class="container">
+            <a href="#" class="navbar-brand text-info">免費抽獎</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainmenu"><span
+                    class="navbar-toggler-icon"></span></button>
+
+            <div class="collapse navbar-collapse" id="mainmenu">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a href="#Features" class="nav-link">功能</a></li>
+                    <li class="nav-item"><a href="#Statics" class="nav-link">狀態</a></li>
+                    <li class="nav-item"><a href="#FAQ" class="nav-link">常見問題</a></li>
+                    <li class="nav-item"><a href="https://www.fgbot.live/pages/commands.html" class="nav-link">指令</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="linksdrop" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">連結</a>
+                        <ul class="dropdown-menu bg-dark" aria-labelledby="linksdrop">
+                            <li><a class="dropdown-item text-muted" href="https://discord.com/oauth2/authorize?client_id=991898054376566875&permissions=1239367019632&scope=bot%20applications.commands">邀請</a></li>
+                            <li><a class="dropdown-item text-muted" href="https://github.com/york9675">Github</a></li>
+                            <li><a class="dropdown-item text-muted" href="https://discord.gg/NdryvmSn5w">支援伺服器</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <li class="navbar-nav nav-item"><a href="https://discord.com/oauth2/authorize?client_id=991898054376566875&permissions=1239367019632&scope=bot%20applications.commands" class="btn btn-outline-info">邀請</a></li>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Info -->
+
+
+    <section class="bg-dark text-light text-center py-5">
+        <div class="container">
+            <div class="d-flex">
+                <div>
+                    <h1><span class="text-info">免費</span>抽獎</h1>
+                    <p>通過Discord官方驗證的抽獎機器人 - 免費抽獎是以抽獎功能為主的機器人，全中文、易使用，包含實用的額外指令。</p>
+                    <a class="btn btn-info" href="https://discord.com/oauth2/authorize?client_id=991898054376566875&permissions=1239367019632&scope=bot%20applications.commands">加到Discord</a>
+                    <a class="m-2 btn btn-light" href="https://docs.fgbot.live/">文檔說明</a>
+                </div>
+                <img class="img-fluid w-50" src="./img/ArisBot.svg" alt="">
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Features -->
+
+
+    <section  id="Features" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">
+                功能
+            </h2>
+            <div class="row text-center">
+                <div class="col-sm">
+                    <div class="card bg-dark text-light mb-3">
+                        <div class="h1 mt-3">
+                            <i class="bi bi-emoji-laughing"></i>
+                        </div>
+                        <div class="card-body text-center">
+                            <h4 class="card-title text-info">易使用</h4>
+                            <p class="card-text">辦抽獎很簡單，一行指令即可完成，也有重抽、編輯等功能，還不加分嗎?</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="card bg-dark text-light mb-3">
+                        <div class="h1 mt-3">
+                            <i class="bi bi-globe"></i>
+                        </div>
+                        <div class="card-body text-center">
+                            <h4 class="card-title text-info">全中文</h4>
+                            <p class="card-text">很多有抽獎功能的器人大多只有英文的介面，而我們為了防止台灣的Discord用戶有懶得看英文的狀況，因此我設計了這隻機器人!他有全中文化的介面，讓你跟機器人不再有語言溝通上的障礙!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="card bg-dark text-light mb-3">
+                        <div class="h1 mt-3">
+                            <i class="bi bi-tools"></i>
+                        </div>
+                        <div class="card-body text-center">
+                            <h4 class="card-title text-info">不只是抽獎</h4>
+                            <p class="card-text">有許多實用的附加工具程式（像是唬爛產生器、Rick、計算機、QR Code產生器、八號球等等），讓你在使用Discord時擁有更多功能！</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Statics -->
+
+
+    <section id="Statics" class="py-5 bg-dark text-light">
+        <div class="container">
+            <div class="py-2 text-center">
+                <h2>立即加入上萬使用者的行列!</h2>
+            </div>
+            <div class="row align-items-center justify-content-center text-center -5">
+                <div class="col">
+                    <img src="./img/statics.svg" alt="" class="img-fluid d-none d-md-block">
+                </div>
+                <div class="col-sm p-5 h1">
+                    <i class="bi bi-hdd-stack text-primary"></i>
+                    <h5><span id="guild-count">正在取得</span></h5>
+                    <h5>伺服器</h5>
+                </div>
+                <div class="col-sm p-5 h1">
+                    <i class="bi bi bi-people-fill text-primary"></i>
+                    <h5><span id="member-count">正在取得</span></h5>
+                    <h5>使用者</h5>
+                </div>
+                <div class="col-sm p-5 h1">
+                    <i class="bi bi bi-slash-square-fill text-primary"></i>
+                    <h5><span id="commands-count">正在取得</span></h5>
+                    <h5>指令</h5>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- FAQ -->
+
+    <section id="FAQ" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-3">
+                常見問題
+            </h2>
+            <div class="accordion accordion-flush" id="your-faq">
+                <div class="accordion-item">
+                    <h5 class="accordion-header" id="qusetion-1">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#answer-1">
+                            邀請至伺服器了，然後呢?
+                        </button>
+                    </h5>
+                    <div class="accordion-collapse collapse p-3" id="answer-1" data-bs-parent="#your-faq">
+                        你已經完成87%的步驟了! 只要輸入 / 並點選此機器人的頭貼就可以查看所有指令! 輸入/giveaway start開始你的第一個抽獎! 更多指令使用資訊請參考<a href="https://docs.fgbot.live/">官方文檔</a>!
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h5 class="accordion-header" id="qusetion-2">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#answer-2">
+                            機器人抽獎有問題怎麼辦?
+                        </button>
+                    </h5>
+                    <div class="accordion-collapse collapse p-3" id="answer-2" data-bs-parent="#your-faq">
+                        先確保機器人傳送訊息的頻道有檢視,發送訊息的權限，如果還有問題請至<a href="https://discord.gg/NdryvmSn5w">支援伺服器</a>尋求幫助!
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h5 class="accordion-header" id="qusetion-3">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#answer-3">
+                            訊息ID是什麼?
+                        </button>
+                    </h5>
+                    <div class="accordion-collapse collapse p-3" id="answer-3" data-bs-parent="#your-faq">
+                        當你在編輯抽獎等等時，需要這個東西，請先至 使用者設定 -> 進階 -> 將開發者模式打開，然後對抽獎訊息按右鍵，並且按下複製ID。如果還有問題請至<a href="https://discord.gg/NdryvmSn5w">支援伺服器</a>尋求幫助!
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- footer -->
+
+    <div class="footer-clean bg-dark">
+    <footer>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-sm-4 col-md-3 item">
+                    <h3>快速前往</h3>
+                    <ul>
+                        <li><a href="#Features">功能</a></li>
+                        <li><a href="#Statics">狀態</a></li>
+                        <li><a href="#FAQ">常見問題</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-4 col-md-3 item">
+                    <h3>關於</h3>
+                    <ul>
+                        <li><a href="./pages/commands.html">指令</a></li>
+                        <li><a href="https://www.fgbot.live/terms-of-service.txt">隱私權政策</a></li>
+                        <li><a href="https://www.fgbot.live/privacy-policy.txt">服務條款</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-4 col-md-3 item">
+                    <h3>連結</h3>
+                    <ul>
+                        <li><a href="https://discord.gg/NdryvmSn5w">支援伺服器</a></li>
+                        <li><a href="https://discord.com/oauth2/authorize?client_id=991898054376566875&permissions=1239367019632&scope=bot%20applications.commands">邀請機器人</a></li>
+                        <li><a href="https://github.com/york9675">Github</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 item social">
+                    <a href="https://discord.gg/NdryvmSn5w"><i class="bi bi-discord"></i></a>
+                    <a href="https://github.com/york9675"><i class="bi bi-github"></i></a>
+                    <p class="copyright">免費抽獎 © 2023</p>
+                </div>
+            </div>
+        </div>
+        <div class="page-footer font-small text-light mt-5">
+        <div class="footer-copyright text-center">
+            還等啥? 快按下<a href="https://discord.com/oauth2/authorize?client_id=991898054376566875&permissions=1239367019632&scope=bot%20applications.commands">邀請</a>並分享給其他人!
+        </div>
+        <div class="footer-copyright text-center">
+            機器人由<a href="https://discordapp.com/users/571310191807692821">York</a>製作，網頁由<a href="https://github.com/Hadi-koubeissi/">Hadi Koubeissi</a>設計
+        </div>
+        </div>
+    </footer>
+</div>
+
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</body>
+
+</html>
