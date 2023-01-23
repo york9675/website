@@ -30,9 +30,7 @@
     <!-- API -->
     <script>
         setInterval(() => {
-          fetch('https://api.fgbot.live/status', {
-            mode: 'no-cors'
-          })
+          fetch('https://api.fgbot.live/status')
             .then((response) => response.json())
             .then((data) => {
               document.getElementById("guild-count").innerHTML = data.guildCount;
