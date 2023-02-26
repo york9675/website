@@ -30,7 +30,7 @@
     <!-- API -->
     <script>
         setInterval(() => {
-          fetch('https://free-giveaway.york524.repl.co/')
+          fetch('https://api.fgbot.live/')
             .then((response) => response.json())
             .then((data) => {
               document.getElementById("guild-count").innerHTML = data.guildCount;
