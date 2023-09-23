@@ -7,6 +7,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const generateButton = document.getElementById("generate-button");
     const resultElement = document.getElementById("result");
 
+    const numPeopleInput = document.getElementById("num-people");
+    const oddEvenToggle = document.getElementById("odd-even-toggle");
+
     advancedToggle.addEventListener("change", function () {
         advancedSettings.style.display = advancedToggle.value === "on" ? "block" : "none";
     });
@@ -15,6 +18,8 @@ document.addEventListener("DOMContentLoaded", function () {
         const start = parseInt(startNumberInput.value);
         const end = parseInt(endNumberInput.value);
         const excludedNumbers = excludedNumbersInput.value.split(",").map(num => parseInt(num.trim()));
+        const numPeople = parseInt(numPeopleInput.value);
+        const selectedOddEven = oddEvenToggle.value;
 
         if (isNaN(start) || isNaN(end)) {
             alert("請輸入有效的起始號和末號!");
@@ -29,6 +34,12 @@ document.addEventListener("DOMContentLoaded", function () {
         const availableNumbers = [];
         for (let i = start; i <= end; i++) {
             if (!excludedNumbers.includes(i)) {
+                if (selectedOddEven === "odd" && i % 2 === 0) {
+                    continue; // 跳過偶數號碼
+                }
+                if (selectedOddEven === "even" && i % 2 !== 0) {
+                    continue; // 跳過奇數號碼
+                }
                 availableNumbers.push(i);
             }
         }
@@ -38,8 +49,13 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        const randomIndex = Math.floor(Math.random() * availableNumbers.length);
-        const selectedNumber = availableNumbers[randomIndex];
-        resultElement.textContent = `選中的號碼是：${selectedNumber} 號 恭喜啦!`;
+        const selectedNumbers = [];
+        for (let i = 0; i < numPeople; i++) {
+            const randomIndex = Math.floor(Math.random() * availableNumbers.length);
+            const selectedNumber = availableNumbers.splice(randomIndex, 1)[0];
+            selectedNumbers.push(selectedNumber);
+        }
+
+        resultElement.textContent = `選中的號碼是：${selectedNumbers.join(", ")} 號 恭喜!`;
     });
 });

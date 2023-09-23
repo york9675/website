@@ -1,29 +1,44 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 .container {
     max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
 }
 
 h1 {
     text-align: center;
+    margin-bottom: 20px;
+    color: #333;
 }
 
 label {
     font-weight: bold;
 }
 
-select, input[type="number"], button {
+input[type="number"],
+select,
+input[type="text"],
+button {
     width: 100%;
     padding: 10px;
-    margin-bottom: 10px;
+    margin: 10px 0;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
@@ -33,6 +48,7 @@ button {
     color: #fff;
     font-weight: bold;
     cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
 }
 
 button:hover {
@@ -41,4 +57,9 @@ button:hover {
 
 #advanced-settings {
     display: none;
+}
+
+/* Add some spacing for better readability */
+.form-group {
+    margin-bottom: 15px;
 }
