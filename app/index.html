@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>線上隨機選號器</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>線上隨機選號器</h1>
+        <form id="number-picker-form">
+            <label for="start-number">起始號碼:</label>
+            <input type="number" id="start-number" name="start" value="1" min="1">
+            <label for="end-number">末號:</label>
+            <input type="number" id="end-number" name="end" value="35" min="1">
+            <label for="advanced-toggle">進階設定:</label>
+            <select id="advanced-toggle">
+                <option value="off">關閉</option>
+                <option value="on">開啟</option>
+            </select>
+            <div id="advanced-settings">
+                <label for="excluded-numbers">排除的座號 (以逗號分隔):</label>
+                <input type="text" id="excluded-numbers" name="excluded">
+            </div>
+            <button type="button" id="generate-button">隨機選號</button>
+        </form>
+        <p id="result"></p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
