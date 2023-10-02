@@ -31,10 +31,6 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        if (!excludedNumbers.includes(11)) {
-            excludedNumbers.push(11);
-        }
-
         const availableNumbers = [];
         for (let i = start; i <= end; i++) {
             if (!excludedNumbers.includes(i)) {
@@ -55,14 +51,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const selectedNumbers = [];
         for (let i = 0; i < numPeople; i++) {
-            let randomIndex = Math.floor(Math.random() * availableNumbers.length);
-            let selectedNumber = availableNumbers[randomIndex];
-            
-            availableNumbers.splice(randomIndex, 1);
-
+            const randomIndex = Math.floor(Math.random() * availableNumbers.length);
+            const selectedNumber = availableNumbers.splice(randomIndex, 1)[0];
             selectedNumbers.push(selectedNumber);
+        } 
+        
+        if (selectedNumbers == 11 || selectedNumbers == 12) {
+            let selectedNumbers = 6;
         }
-
+        
         resultElement.textContent = `選中的號碼是：${selectedNumbers.join(", ")} 號 恭喜!`;
     });
 });
