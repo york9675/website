@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 selectedNumber = 6;
             }
 
-            // 从可用號碼中刪除已選中的號碼
+            // 从可用號碼中删除已选中的號碼
             availableNumbers.splice(randomIndex, 1);
 
             selectedNumbers.push(selectedNumber);
