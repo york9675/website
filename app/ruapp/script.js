@@ -52,13 +52,15 @@ document.addEventListener("DOMContentLoaded", function () {
         const selectedNumbers = [];
         for (let i = 0; i < numPeople; i++) {
             const randomIndex = Math.floor(Math.random() * availableNumbers.length);
-            const selectedNumber = availableNumbers.splice(randomIndex, 1)[0];
-            if (selectedNumber === 11 || 12) {
+            let selectedNumber = availableNumbers.splice(randomIndex, 1)[0];
+            
+            // 如果抽到的號碼是11號，將其轉換為6號
+            if (selectedNumber === 11) {
                 selectedNumber = 6;
             }
+            
             selectedNumbers.push(selectedNumber);
         }
-    
 
         resultElement.textContent = `選中的號碼是：${selectedNumbers.join(", ")} 號 恭喜!`;
     });
