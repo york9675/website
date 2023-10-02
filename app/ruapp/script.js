@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // 在这里检查抽到的號碼是否为11號，如果是，将其替换为6號
             if (selectedNumber === 11) {
-                selectedNumber = 6;
+                let selectedNumber = 6;
             }
 
             // 从可用號碼中删除已选中的號碼
