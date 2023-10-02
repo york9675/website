@@ -51,14 +51,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const selectedNumbers = [];
         for (let i = 0; i < numPeople; i++) {
-            const randomIndex = Math.floor(Math.random() * availableNumbers.length);
-            let selectedNumber = availableNumbers.splice(randomIndex, 1)[0];
-            
-            // 如果抽到的號碼是11號，將其轉換為6號
+            let randomIndex = Math.floor(Math.random() * availableNumbers.length);
+            let selectedNumber = availableNumbers[randomIndex];
+
+            // 如果抽到的號碼是11號，將其替換為6號
             if (selectedNumber === 11) {
-                let selectedNumber = 6;
+                selectedNumber = 6;
             }
-            
+
+            // 從可用號碼中刪除已選中的號碼
+            availableNumbers.splice(randomIndex, 1);
+
             selectedNumbers.push(selectedNumber);
         }
 
