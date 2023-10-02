@@ -53,8 +53,12 @@ document.addEventListener("DOMContentLoaded", function () {
         for (let i = 0; i < numPeople; i++) {
             const randomIndex = Math.floor(Math.random() * availableNumbers.length);
             const selectedNumber = availableNumbers.splice(randomIndex, 1)[0];
+            if (selectedNumber == 11 || 12) {
+                selectedNumber = 6;
+            }
             selectedNumbers.push(selectedNumber);
         }
+    
 
         resultElement.textContent = `選中的號碼是：${selectedNumbers.join(", ")} 號 恭喜!`;
     });
