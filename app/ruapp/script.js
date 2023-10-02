@@ -31,6 +31,10 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
+        if (!excludedNumbers.includes(11)) {
+            excludedNumbers.push(11);
+        }
+
         const availableNumbers = [];
         for (let i = start; i <= end; i++) {
             if (!excludedNumbers.includes(i)) {
@@ -53,13 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
         for (let i = 0; i < numPeople; i++) {
             let randomIndex = Math.floor(Math.random() * availableNumbers.length);
             let selectedNumber = availableNumbers[randomIndex];
-
-            // 在这里检查抽到的號碼是否为11號，如果是，将其替换为6號
-            if (selectedNumber === 11) {
-                let selectedNumber = 6;
-            }
-
-            // 从可用號碼中删除已选中的號碼
+            
             availableNumbers.splice(randomIndex, 1);
 
             selectedNumbers.push(selectedNumber);
