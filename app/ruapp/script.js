@@ -54,12 +54,12 @@ document.addEventListener("DOMContentLoaded", function () {
             let randomIndex = Math.floor(Math.random() * availableNumbers.length);
             let selectedNumber = availableNumbers[randomIndex];
 
-            // 如果抽到的號碼是11號，將其替換為6號
+            // 在这里检查抽到的號碼是否为11號，如果是，将其替换为6號
             if (selectedNumber === 11) {
                 selectedNumber = 6;
             }
 
-            // 從可用號碼中刪除已選中的號碼
+            // 从可用號碼中刪除已選中的號碼
             availableNumbers.splice(randomIndex, 1);
 
             selectedNumbers.push(selectedNumber);
