@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
             
             // 如果抽到的號碼是11號，將其轉換為6號
             if (selectedNumber === 11) {
-                selectedNumber = 6;
+                let selectedNumber = 6;
             }
             
             selectedNumbers.push(selectedNumber);
