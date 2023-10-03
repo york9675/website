@@ -54,9 +54,8 @@ document.addEventListener("DOMContentLoaded", function () {
             const randomIndex = Math.floor(Math.random() * availableNumbers.length);
             let selectedNumber = availableNumbers.splice(randomIndex, 1)[0];
             
-            if (selectedNumbers === 11) {
-                selectedNumbers = 6;
-                selectedNumbers.push(selectedNumber);
+            if (selectedNumbers.indexOf(11) !== -1) {
+                selectedNumbers.push(6);
             } else {
                 selectedNumbers.push(selectedNumber);
             }
