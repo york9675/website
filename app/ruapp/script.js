@@ -52,12 +52,15 @@ document.addEventListener("DOMContentLoaded", function () {
         const selectedNumbers = [];
         for (let i = 0; i < numPeople; i++) {
             const randomIndex = Math.floor(Math.random() * availableNumbers.length);
-            const selectedNumber = availableNumbers.splice(randomIndex, 1)[0];
-            selectedNumbers.push(selectedNumber);
-        } 
-        
-        if (selectedNumbers == 11 || selectedNumbers == 12) {
-            let selectedNumbers = 6;
+            let selectedNumber = availableNumbers.splice(randomIndex, 1)[0];
+            
+            if (selectedNumbers == 11) {
+                const selectedNumbers = 6;
+                selectedNumbers.push(selectedNumber);
+            } else {
+                selectedNumbers.push(selectedNumber);
+            }
+            
         }
         
         resultElement.textContent = `選中的號碼是：${selectedNumbers.join(", ")} 號 恭喜!`;
