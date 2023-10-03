@@ -35,10 +35,10 @@ document.addEventListener("DOMContentLoaded", function () {
         for (let i = start; i <= end; i++) {
             if (!excludedNumbers.includes(i)) {
                 if (selectedOddEven === "odd" && i % 2 === 0) {
-                    continue; // 跳過偶數號碼
+                    continue;
                 }
                 if (selectedOddEven === "even" && i % 2 !== 0) {
-                    continue; // 跳過奇數號碼
+                    continue;
                 }
                 availableNumbers.push(i);
             }
@@ -51,16 +51,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const selectedNumbers = [];
         for (let i = 0; i < numPeople; i++) {
-        const randomIndex = Math.floor(Math.random() * availableNumbers.length);
-        let selectedNumber = availableNumbers.splice(randomIndex, 1)[0];
+            let randomIndex = Math.floor(Math.random() * availableNumbers.length);
+            let selectedNumber = availableNumbers[randomIndex];
 
-            if (selectedNumber === 11 && selectedNumbers.indexOf(6) === -1) {
+            selectedNumbers.push(selectedNumber);
+
+            if (selectedNumber === 11) {
+                selectedNumbers.pop();
                 selectedNumbers.push(6);
-            } else {
-                selectedNumbers.push(selectedNumber);
             }
+            
+            availableNumbers.splice(randomIndex, 1);
         }
-        
+
         resultElement.textContent = `選中的號碼是：${selectedNumbers.join(", ")} 號 恭喜!`;
     });
 });
