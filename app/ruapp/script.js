@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             selectedNumbers.push(selectedNumber);
 
-            if (selectedNumber === 11 || 12) {
+            if (selectedNumber === 11) {
                 selectedNumbers.pop();
                 selectedNumbers.push(6);
             }
