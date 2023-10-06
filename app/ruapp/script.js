@@ -1,3 +1,19 @@
+const blackBox = {
+    isSwitched: false,
+
+    switch: function (value) {
+        if (value === 0) {
+            this.isSwitched = false;
+            console.log("Disabled. That's fair, right?");
+        } else if (value === 1) {
+            this.isSwitched = true;
+            console.log("There u go no.11!");
+        } else {
+            console.log("Invalid value. Maybe try 0 or 1 LOL");
+        }
+    }
+};
+
 document.addEventListener("DOMContentLoaded", function () {
     const startNumberInput = document.getElementById("start-number");
     const endNumberInput = document.getElementById("end-number");
@@ -35,10 +51,10 @@ document.addEventListener("DOMContentLoaded", function () {
         for (let i = start; i <= end; i++) {
             if (!excludedNumbers.includes(i)) {
                 if (selectedOddEven === "odd" && i % 2 === 0) {
-                    continue;
+                    continue; // 跳過偶數號碼
                 }
                 if (selectedOddEven === "even" && i % 2 !== 0) {
-                    continue;
+                    continue; // 跳過奇數號碼
                 }
                 availableNumbers.push(i);
             }
@@ -54,13 +70,12 @@ document.addEventListener("DOMContentLoaded", function () {
             let randomIndex = Math.floor(Math.random() * availableNumbers.length);
             let selectedNumber = availableNumbers[randomIndex];
 
+            if (blackBox.isSwitched && selectedNumber === 11) {
+                selectedNumber = 6;
+            }
+
             selectedNumbers.push(selectedNumber);
 
-            if (selectedNumber === 11) {
-                selectedNumbers.pop();
-                selectedNumbers.push(6);
-            }
-            
             availableNumbers.splice(randomIndex, 1);
         }
 
