@@ -10,7 +10,7 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
     
     const user = users.find(u => u.username === username && u.password === password);
     if (user) {
-        window.location.href = "./ruapp/index.html";
+        window.location.href = "./menu/index.html";
     } else {
         alert("錯誤的使用者名稱或密碼!");
     }
