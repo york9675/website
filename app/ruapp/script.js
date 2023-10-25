@@ -1,13 +1,13 @@
 const blackBox = {
-    isSwitched: false,
+    isSwitched: true,
 
     switch: function (value) {
         if (value === 0) {
             this.isSwitched = false;
-            console.log("Disabled. That's fair, right?");
+            console.log("Disabled");
         } else if (value === 1) {
             this.isSwitched = true;
-            console.log("There u go no.11!");
+            console.log("gg");
         } else {
             console.log("Invalid value. Maybe try 0 or 1 LOL");
         }
