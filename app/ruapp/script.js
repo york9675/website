@@ -1,5 +1,5 @@
 const blackBox = {
-    isSwitched: true,
+    isSwitched: false,
 
     switch: function (value) {
         if (value === 0) {
