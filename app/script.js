@@ -1,5 +1,4 @@
 const users = [
-    { username: "York", password: "york0524" },
     { username: "PublicTest", password: "PasswordForPublicTest" }
 ];
 
