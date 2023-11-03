@@ -51,10 +51,10 @@ document.addEventListener("DOMContentLoaded", function () {
         for (let i = start; i <= end; i++) {
             if (!excludedNumbers.includes(i)) {
                 if (selectedOddEven === "odd" && i % 2 === 0) {
-                    continue; // 跳過偶數號碼
+                    continue;
                 }
                 if (selectedOddEven === "even" && i % 2 !== 0) {
-                    continue; // 跳過奇數號碼
+                    continue;
                 }
                 availableNumbers.push(i);
             }
