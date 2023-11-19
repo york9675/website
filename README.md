@@ -3,8 +3,7 @@
 這裡是免費抽獎網站的原始碼，可供參考學習等用途使用
 ## 作者
 
-- [Hadi Koubeissi](https://github.com/Hadi-koubeissi/) (此網站原作者)
-- [Tomato6966](https://github.com/Tomato6966) (新版網站原作者)
+- [Tomato6966](https://github.com/Tomato6966) (此網站原作者)
 - [York](https://github.com/york9675/)
 ## 問題回報
 
