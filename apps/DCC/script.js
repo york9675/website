@@ -7,9 +7,11 @@ function setWhite() {
     document.body.style.backgroundColor = 'white';
 }
 
-function setBlack() {
+function setBlack(event) {
     isWhite = false;
-    document.body.style.transition = 'background-color 1s ease-out';
+    if (event && (event.key === 's' || event.key === 'S')) {
+        document.body.style.transition = 'background-color 1s ease-out';
+    }
     document.body.style.backgroundColor = 'black';
 }
 
@@ -25,11 +27,13 @@ document.addEventListener('keydown', function (event) {
 document.addEventListener('keyup', function (event) {
     if (event.key === 'a' || event.key === 'A') {
         requestAnimationFrame(() => {
-            setBlack();
+            setBlack(event);
         });
     } else if (event.key === 's' || event.key === 'S') {
         requestAnimationFrame(() => {
-            fadeOutTimeout = setTimeout(setBlack, 0);
+            fadeOutTimeout = setTimeout(() => {
+                setBlack(event);
+            }, 0);
         });
     }
 });
