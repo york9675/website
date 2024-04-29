@@ -7,11 +7,9 @@ function setWhite() {
     document.body.style.backgroundColor = 'white';
 }
 
-function setBlack(event) {
+function setBlack() {
     isWhite = false;
-    if (event && (event.key === 's' || event.key === 'S')) {
-        document.body.style.transition = 'background-color 1s ease-out';
-    }
+    document.body.style.transition = 'background-color 1s ease-out';
     document.body.style.backgroundColor = 'black';
 }
 
@@ -27,13 +25,11 @@ document.addEventListener('keydown', function (event) {
 document.addEventListener('keyup', function (event) {
     if (event.key === 'a' || event.key === 'A') {
         requestAnimationFrame(() => {
-            setBlack(event);
+            setBlack();
         });
     } else if (event.key === 's' || event.key === 'S') {
         requestAnimationFrame(() => {
-            fadeOutTimeout = setTimeout(() => {
-                setBlack(event);
-            }, 0);
+            fadeOutTimeout = setTimeout(setBlack, 0);
         });
     }
 });
@@ -43,14 +39,7 @@ document.addEventListener('touchstart', function () {
 });
 
 document.addEventListener('touchend', function () {
-    fadeOutTimeout = setTimeout(setBlack, 1000); // Delay setting black for 1 second
-});
-
-// Cancel timeout if touch is moved or canceled
-document.addEventListener('touchmove', function () {
-    clearTimeout(fadeOutTimeout);
-});
-
-document.addEventListener('touchcancel', function () {
-    clearTimeout(fadeOutTimeout);
+    requestAnimationFrame(() => {
+        setBlack();
+    });
 });
