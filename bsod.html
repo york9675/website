@@ -23,21 +23,13 @@
             font-size: 18px;
             margin-bottom: 20px;
         }
-        .progress-bar {
-            width: 100%;
-            background-color: #005a9e;
-            height: 20px;
+        .percentage {
+            font-size: 18px;
             margin-bottom: 20px;
-        }
-        .progress {
-            width: 20%;
-            background-color: white;
-            height: 100%;
         }
         .qr-code {
             width: 150px;
             height: 150px;
-            background-color: white;
             margin-bottom: 20px;
         }
         .info {
@@ -48,30 +40,29 @@
 <body>
     <div class="container">
         <h1>:(</h1>
-        <p>Your page ran into a problem and couldn't be found.</p>
-        <p>We're just collecting some error info, and then we'll redirect you to our homepage.</p>
-        <div class="progress-bar">
-            <div class="progress" id="progress"></div>
-        </div>
-        <div class="qr-code"></div>
-        <p class="info">For more information about this issue and possible fixes, visit<br>
-        https://github.com/swarooppalik</p>
-        <p class="info">If you call a support person, give them this info:<br>
-        Stop code: PAGE_NOT_FOUND</p>
+        <p>您的頁面發生了問題，無法找到指定頁面。</p>
+        <p>我們正在收集某些錯誤資訊，然後我們會將您重新導向到我們的主頁。</p>
+        <p class="percentage"><span id="progress">0</span>% 已完成</p>
+        <img class="qr-code" src="https://api.qrserver.com/v1/create-qr-code/?data=https://youtu.be/dQw4w9WgXcQ?si=KpDXxB50Q5Qaav93" alt="QR Code">
+        <p class="info">如需此問題與可能修復的更多資訊，請瀏覽<br>
+        https://github.com/york9675/website</p>
+        <p class="info">致電支援人員時，請提供此資訊:<br>
+        停止代碼: PAGE_NOT_FOUND</p>
     </div>
-
     <script>
-        let progress = 20;
-        const progressBar = document.getElementById('progress');
+        let progress = 0;
+        const progressText = document.getElementById('progress');
         
         function updateProgress() {
             if (progress < 100) {
                 progress += 1;
-                progressBar.style.width = progress + '%';
+                progressText.textContent = progress;
                 setTimeout(updateProgress, 100);
+            } else {
+                // 當進度達到 100% 時重定向到指定頁面
+                window.location.href = 'https://york9675.github.io/website/index.html';
             }
         }
-
         updateProgress();
     </script>
 </body>
