@@ -22,10 +22,14 @@
             color: white;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             padding: 50px;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
         .container {
             max-width: 600px;
-            margin: 0 auto;
         }
         h1 {
             font-size: 100px;
@@ -35,13 +39,21 @@
             font-size: 18px;
             margin-bottom: 20px;
         }
-        .percentage {
-            font-size: 18px;
-            margin-bottom: 20px;
+        .content-wrapper {
+            display: flex;
+            align-items: flex-start;
+            margin-top: 20px;
         }
         .qr-code {
             width: 150px;
             height: 150px;
+            margin-right: 20px;
+        }
+        .text-content {
+            flex: 1;
+        }
+        .percentage {
+            font-size: 18px;
             margin-bottom: 20px;
         }
         .info {
@@ -55,11 +67,15 @@
         <p>您的頁面發生了問題，無法找到指定的頁面。</p>
         <p>我們剛剛正在收集某些錯誤資訊，接著我們會將您重新導向到我們的主頁。</p>
         <p class="percentage">已完成 <span id="progress">0</span>%</p>
-        <img class="qr-code" src="./assets/img/IMG_9789.png" alt="QR Code">
-        <p class="info">如需此問題與可能修復的更多資訊，請瀏覽<br>
-        https://github.com/york9675/website</p>
-        <p class="info">致電支援人員時，請提供此資訊:<br>
-        停止代碼: PAGE_NOT_FOUND</p>
+        <div class="content-wrapper">
+            <img class="qr-code" src="./assets/img/IMG_9789.png" alt="QR Code">
+            <div class="text-content">
+                <p class="info">如需此問題與可能修復的更多資訊，請瀏覽<br>
+                https://github.com/york9675/website</p>
+                <p class="info">致電支援人員時，請提供此資訊:<br>
+                停止代碼: PAGE_NOT_FOUND</p>
+            </div>
+        </div>
     </div>
     <script>
         let progress = 0;
