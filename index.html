@@ -248,7 +248,7 @@
     <!-- API Script -->
     <script>
       setInterval(() => {
-        fetch('http://server-hi.ouoc.net:25007')
+        fetch('server-hi.ouoc.net:25007')
           .then((response) => response.json())
           .then((data) => {
             document.getElementById("guild-count").innerHTML = data.guildCount;
