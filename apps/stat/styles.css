@@ -26,22 +26,29 @@ textarea {
     border-radius: 4px;
     resize: none;
     font-size: 16px;
+    box-sizing: border-box;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
 }
 
 button {
-    width: 100%;
+    width: 32%;
     padding: 10px;
     border: none;
-    background-color: #28a745;
+    background-color: #007bff;
     color: white;
     font-size: 16px;
     border-radius: 4px;
     cursor: pointer;
-    margin-top: 10px;
+    box-sizing: border-box;
 }
 
 button:hover {
-    background-color: #218838;
+    background-color: #0056b3;
 }
 
 .statistics {
@@ -50,4 +57,6 @@ button:hover {
 
 .statistics p {
     margin: 5px 0;
+    display: flex;
+    justify-content: space-between;
 }
