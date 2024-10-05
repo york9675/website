@@ -1,34 +1,62 @@
-const textInput = document.getElementById("text-input");
-const clearButton = document.getElementById("clear-button");
-
-const charCountElem = document.getElementById("char-count");
-const numberCountElem = document.getElementById("number-count");
-const lineCountElem = document.getElementById("line-count");
-const paragraphCountElem = document.getElementById("paragraph-count");
-const chineseCountElem = document.getElementById("chinese-count");
-const chinesePunctuationCountElem = document.getElementById("chinese-punctuation-count");
-const englishCountElem = document.getElementById("english-count");
-const englishPunctuationCountElem = document.getElementById("english-punctuation-count");
-const wordCountElem = document.getElementById("word-count");
-const byteWordCountElem = document.getElementById("byte-word-count");
-
-function updateStatistics() {
-    const text = textInput.value;
-    
-    charCountElem.innerText = text.length;
-    numberCountElem.innerText = (text.match(/\d/g) || []).length;
-    lineCountElem.innerText = (text.match(/\n/g) || []).length + 1;
-    paragraphCountElem.innerText = (text.match(/\n\s*\n/g) || []).length + 1;
-    chineseCountElem.innerText = (text.match(/[\u4e00-\u9fa5]/g) || []).length;
-    chinesePunctuationCountElem.innerText = (text.match(/[\u3000-\u303F]/g) || []).length;
-    englishCountElem.innerText = (text.match(/[a-zA-Z]/g) || []).length;
-    englishPunctuationCountElem.innerText = (text.match(/[.,!?;:'"]/g) || []).length;
-    wordCountElem.innerText = (text.match(/\b\w+\b/g) || []).length;
-    byteWordCountElem.innerText = new Blob([text]).size;
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 20px;
 }
 
-textInput.addEventListener("input", updateStatistics);
-clearButton.addEventListener("click", () => {
-    textInput.value = "";
-    updateStatistics();
-});
+.container {
+    max-width: 600px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: none;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+button {
+    width: 32%;
+    padding: 10px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.statistics {
+    margin-top: 20px;
+}
+
+.statistics p {
+    margin: 5px 0;
+    display: flex;
+    justify-content: space-between;
+}
