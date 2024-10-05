@@ -1,62 +1,58 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f7f7f7;
-    margin: 0;
-    padding: 20px;
+const textInput = document.getElementById("text-input");
+const clearButton = document.getElementById("clear-button");
+const trimSpacesButton = document.getElementById("trim-spaces-button");
+const formatParagraphButton = document.getElementById("format-paragraph-button");
+
+const charCountElem = document.getElementById("char-count");
+const numberCountElem = document.getElementById("number-count");
+const lineCountElem = document.getElementById("line-count");
+const chineseCountElem = document.getElementById("chinese-count");
+const chinesePunctuationCountElem = document.getElementById("chinese-punctuation-count");
+const englishCountElem = document.getElementById("english-count");
+const englishPunctuationCountElem = document.getElementById("english-punctuation-count");
+
+function updateStatistics() {
+    const text = textInput.value;
+
+    // 計算字數
+    charCountElem.innerText = text.length;
+    
+    // 計算數字數
+    numberCountElem.innerText = (text.match(/\d/g) || []).length;
+
+    // 計算行數
+    lineCountElem.innerText = (text.match(/\n/g) || []).length + 1;
+
+    // 計算中文字數
+    chineseCountElem.innerText = (text.match(/[\u4e00-\u9fa5]/g) || []).length;
+
+    // 計算中文全形標點符號數（涵蓋常見的全形標點）
+    chinesePunctuationCountElem.innerText = (text.match(/[\u3000-\u303F\uFF00-\uFFEF]/g) || []).length;
+
+    // 計算英文字母數
+    englishCountElem.innerText = (text.match(/[a-zA-Z]/g) || []).length;
+
+    // 計算英文標點符號數
+    englishPunctuationCountElem.innerText = (text.match(/[.,!?;:'"]/g) || []).length;
 }
 
-.container {
-    max-width: 600px;
-    margin: auto;
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
+// 清除所有文字
+clearButton.addEventListener("click", () => {
+    textInput.value = "";
+    updateStatistics();
+});
 
-h1 {
-    text-align: center;
-    color: #333;
-}
+// 清除行尾空格
+trimSpacesButton.addEventListener("click", () => {
+    textInput.value = textInput.value.replace(/[ \t]+$/gm, "");
+    updateStatistics();
+});
 
-textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    resize: none;
-    font-size: 16px;
-    box-sizing: border-box;
-}
+// 段落整理，段前加空格
+formatParagraphButton.addEventListener("click", () => {
+    textInput.value = textInput.value.replace(/^(?!\s)/gm, "    ");
+    updateStatistics();
+});
 
-.button-group {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
-}
-
-button {
-    width: 32%;
-    padding: 10px;
-    border: none;
-    background-color: #007bff;
-    color: white;
-    font-size: 16px;
-    border-radius: 4px;
-    cursor: pointer;
-    box-sizing: border-box;
-}
-
-button:hover {
-    background-color: #0056b3;
-}
-
-.statistics {
-    margin-top: 20px;
-}
-
-.statistics p {
-    margin: 5px 0;
-    display: flex;
-    justify-content: space-between;
-}
+// 每次輸入時更新統計數據
+textInput.addEventListener("input", updateStatistics);
