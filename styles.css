@@ -105,14 +105,19 @@ header img {
 header h1 {
     font-size: 2.8rem;
     color: #ffffff;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 2px 2px rgba(0, 0, 0, 0.5);
+    text-shadow: 
+        0 0 10px rgba(255, 255, 255, 0.5),
+        0 2px 2px rgba(0, 0, 0, 0.5),
+        0 4px 4px rgba(0, 0, 0, 0.3);
     margin: 10px 0 5px 0;
 }
 
 header p {
     font-size: 1.2rem;
     color: #ffffff;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    text-shadow: 
+        0 1px 2px rgba(0, 0, 0, 0.5),
+        0 2px 4px rgba(0, 0, 0, 0.3);
     margin: 0;
 }
 
@@ -145,7 +150,9 @@ header img:hover {
     backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.3);
     color: white;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    text-shadow: 
+        0 1px 2px rgba(0, 0, 0, 0.5),
+        0 2px 4px rgba(0, 0, 0, 0.3);
     position: relative;
     overflow: hidden;
 }
@@ -164,7 +171,10 @@ header img:hover {
 .section h2 {
     color: white;
     font-size: 24px;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 2px 2px rgba(0, 0, 0, 0.5);
+    text-shadow: 
+        0 0 10px rgba(255, 255, 255, 0.5),
+        0 2px 2px rgba(0, 0, 0, 0.5),
+        0 4px 4px rgba(0, 0, 0, 0.3);
     border-bottom: 2px solid rgba(255, 255, 255, 0.2);
     padding-bottom: 10px;
     text-align: center;
@@ -201,8 +211,17 @@ header img:hover {
 
 .app h3 {
     color: white;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 2px 2px rgba(0, 0, 0, 0.5);
+    text-shadow: 
+        0 0 10px rgba(255, 255, 255, 0.5),
+        0 2px 2px rgba(0, 0, 0, 0.5),
+        0 3px 3px rgba(0, 0, 0, 0.3);
     position: relative;
+}
+
+.app p {
+    text-shadow: 
+        0 1px 2px rgba(0, 0, 0, 0.5),
+        0 2px 3px rgba(0, 0, 0, 0.3);
 }
 
 .app a {
@@ -283,7 +302,9 @@ footer {
     padding: 20px;
     text-align: center;
     color: white;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    text-shadow: 
+        0 1px 2px rgba(0, 0, 0, 0.5),
+        0 2px 4px rgba(0, 0, 0, 0.3);
     box-shadow: 
         0 -5px 15px rgba(0, 0, 0, 0.1),
         inset 0 0 5px rgba(255, 255, 255, 0.5);
@@ -297,7 +318,9 @@ a {
     color: white;
     text-decoration: none;
     transition: color 0.2s;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    text-shadow: 
+        0 1px 2px rgba(0, 0, 0, 0.5),
+        0 2px 3px rgba(0, 0, 0, 0.3);
 }
 
 a:hover {
