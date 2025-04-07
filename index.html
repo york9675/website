@@ -10,67 +10,76 @@ by Porter Robinson
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Creating free, ad-free, and accessible tools that simplify life.">
+    <meta name="description" content="Creating free, ad-free, and accessible tools that simplify life." data-i18n="meta.description">
     <link rel="icon" href="https://avatars.githubusercontent.com/u/178259609" type="image/png">
-    <title>York Development</title>
+    <title data-i18n="title">York Development</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div class="language-selector">
+        <select id="language-select">
+            <option value="en">English</option>
+            <option value="zh_TW">繁體中文</option>
+        </select>
+    </div>
+
     <header>
         <div>
             <img src="https://avatars.githubusercontent.com/u/178259609" alt="York Development Logo">
-            <h1>York Development</h1>
-            <p>Creating free, ad-free, and accessible tools that simplify life.</p>
+            <h1 data-i18n="header.title">York Development</h1>
+            <p data-i18n="header.slogan">Creating free, ad-free, and accessible tools that simplify life.</p>
         </div>
     </header>
 
     <div class="container">
         <div class="section">
-            <h2>About Us</h2>
-            <p>York Development is dedicated to creating apps that bring convenience to your daily life. We believe in providing tools that are simple, user-friendly, and accessible to everyone.</p>
+            <h2 data-i18n="about.title">About Us</h2>
+            <p data-i18n="about.content">York Development is dedicated to creating apps that bring convenience to your daily life. We believe in providing tools that are simple, user-friendly, and accessible to everyone.</p>
         </div>
 
         <div class="section">
-            <h2>Team Members</h2>
+            <h2 data-i18n="team.title">Team Members</h2>
             <div class="team-member">
                 <img src="https://avatars.githubusercontent.com/u/84720688" alt="York">
                 <div>
-                    <h3>York (Founder/Developer)</h3>
-                    <p>A hobby developer from Taiwan with a passion for creating tools that make life simpler.</p>
-                    <p><a href="https://github.com/york9675">GitHub</a> | <a href="https://www.buymeacoffee.com/york0524">Buy Me a Coffee</a></p>
+                    <h3 data-i18n="team.york.title">York (Founder/Developer)</h3>
+                    <p data-i18n="team.york.bio">A hobby developer from Taiwan with a passion for creating tools that make life simpler.</p>
+                    <p><a href="https://github.com/york9675" data-i18n="team.github">GitHub</a> | <a href="https://www.buymeacoffee.com/york0524" data-i18n="team.coffee">Buy Me a Coffee</a></p>
                 </div>
             </div>
         </div>
 
         <div class="section">
-            <h2>Our Apps</h2>
+            <h2 data-i18n="apps.title">Our Apps</h2>
             <div class="apps-list">
                 <div class="app">
                     <h3>YorkNotify</h3>
-                    <p>A seamless way to schedule notifications on your iOS devices.</p>
-                    <a href="https://york9675.github.io/YorkNotify/">Learn More</a>
+                    <p data-i18n="apps.yorknotify.description">A seamless way to schedule notifications on your iOS devices.</p>
+                    <a href="https://york9675.github.io/YorkNotify/" data-i18n="apps.learnMore">Learn More</a>
                 </div>
                 <div class="app">
                     <h3>Tempo Sync</h3>
-                    <p>A simple metronome app designed to help musicians keep time while playing.</p>
-                    <a href="https://york9675.github.io/Tempo-Sync/">Learn More</a>
+                    <p data-i18n="apps.temposync.description">A simple metronome app designed to help musicians keep time while playing.</p>
+                    <a href="https://york9675.github.io/Tempo-Sync/" data-i18n="apps.learnMore">Learn More</a>
                 </div>
                 <div class="app">
                     <h3>Tomato Project</h3>
-                    <p>A simple Pomodoro timer to help you stay focused and productive.</p>
-                    <a href="https://york9675.github.io/Tomato-Project/">Learn More</a>
+                    <p data-i18n="apps.tomato.description">A simple Pomodoro timer to help you stay focused and productive.</p>
+                    <a href="https://york9675.github.io/Tomato-Project/" data-i18n="apps.learnMore">Learn More</a>
                 </div>
                 <div class="app">
-                    <h3>免費抽獎</h3>
-                    <p>以抽獎功能為主的機器人。全中文、易使用，包含實用的額外指令！</p>
-                    <a href="https://discord.com/discovery/applications/991898054376566875">Learn More</a>
+                    <h3 data-i18n="apps.lottery.name">免費抽獎</h3>
+                    <p data-i18n="apps.lottery.description">以抽獎功能為主的機器人。全中文、易使用，包含實用的額外指令！</p>
+                    <a href="https://discord.com/discovery/applications/991898054376566875" data-i18n="apps.learnMore">Learn More</a>
                 </div>
             </div>
         </div>
     </div>
 
     <footer>
-        <p>&copy; 2025 York Development<br>Designed with nostogia and ❤️ in Taiwan</p>
+        <p data-i18n="footer.copyright">&copy; 2025 York Development<br>Designed with nostogia and ❤️ in Taiwan</p>
     </footer>
+    
+    <script src="script.js"></script>
 </body>
 </html>

@@ -1,0 +1,43 @@
+{
+    "title": "York Development",
+    "meta": {
+      "description": "創建免費、無廣告且易於使用的工具，簡化您的生活。"
+    },
+    "header": {
+      "title": "York Development",
+      "slogan": "創建免費、無廣告且易於使用的工具，簡化您的生活。"
+    },
+    "about": {
+      "title": "關於我們",
+      "content": "York Development致力於創建為您日常生活帶來便利的應用程式，提供簡單、易使用且人人都能擁有的工具。"
+    },
+    "team": {
+      "title": "團隊成員",
+      "york": {
+        "title": "York (創辦人/開發者)",
+        "bio": "來自台灣的業餘開發者，熱衷於創建使生活更簡單的工具。"
+      },
+      "github": "GitHub",
+      "coffee": "Buy Me a Coffee"
+    },
+    "apps": {
+      "title": "我們的應用程式",
+      "learnMore": "了解更多",
+      "yorknotify": {
+        "description": "在 iOS 裝置上輕鬆排程通知。"
+      },
+      "temposync": {
+        "description": "一個簡單的線上節拍器，旨在幫助音樂家在演奏時保持節奏。"
+      },
+      "tomato": {
+        "description": "簡單的番茄鐘計時器，幫助您保持專注和提高生產力。"
+      },
+      "lottery": {
+        "name": "免費抽獎",
+        "description": "以抽獎功能為主的機器人。全中文、易使用，包含實用的額外指令！"
+      }
+    },
+    "footer": {
+      "copyright": "© 2025 York Development\n用懷舊和❤️在台灣設計"
+    }
+  }
