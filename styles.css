@@ -340,18 +340,63 @@ a:hover {
 
 .language-selector {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 20px;
+    right: 20px;
     z-index: 1000;
 }
 
 .language-selector select {
-    padding: 5px 10px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-    background-color: white;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: 8px 35px 8px 15px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    background: linear-gradient(to bottom, 
+        rgba(255, 255, 255, 0.7) 0%,
+        rgba(255, 255, 255, 0.5) 50%,
+        rgba(255, 255, 255, 0.4) 51%,
+        rgba(255, 255, 255, 0.6) 100%);
+    color: #333;
     font-size: 14px;
     cursor: pointer;
+    box-shadow: 
+        0 2px 5px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+    position: relative;
+}
+
+.language-selector::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 6px solid rgba(0, 0, 0, 0.5);
+    pointer-events: none;
+    transform: translateY(-50%);
+}
+
+.language-selector select:hover {
+    background: linear-gradient(to bottom, 
+        rgba(255, 255, 255, 0.8) 0%,
+        rgba(255, 255, 255, 0.6) 50%,
+        rgba(255, 255, 255, 0.5) 51%,
+        rgba(255, 255, 255, 0.7) 100%);
+}
+
+.language-selector select:focus {
+    outline: none;
+    box-shadow: 
+        0 0 0 2px rgba(73, 149, 221, 0.5),
+        0 2px 5px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
 @media (max-width: 768px) {
