@@ -1,119 +1,114 @@
-// ai technology now is so good good that i didn't even write one line of code on this script
-// btw, i know how to write js :)
-// fun fact: i'm learning japanese recently
+// Retro scanline effect
+const scanlineCanvas = document.getElementById('scanline-canvas');
+function resizeScanline() {
+  scanlineCanvas.width = window.innerWidth;
+  scanlineCanvas.height = window.innerHeight;
+}
+resizeScanline();
+window.addEventListener('resize', resizeScanline);
 
-// Language resources will be stored here after loading
-let resources = {};
-let currentLanguage = 'en';
+function drawScanlines() {
+  const ctx = scanlineCanvas.getContext('2d');
+  ctx.clearRect(0, 0, scanlineCanvas.width, scanlineCanvas.height);
+  ctx.globalAlpha = 0.16;
+  for (let y = 0; y < scanlineCanvas.height; y += 4) {
+    ctx.fillStyle = (y % 8 === 0) ? '#00000030' : '#00000010';
+    ctx.fillRect(0, y, scanlineCanvas.width, 2);
+  }
+  ctx.globalAlpha = 1.0;
+}
+setInterval(drawScanlines, 50);
+drawScanlines();
 
-// Load language resources
-async function loadLanguage(lang) {
-    try {
-        const response = await fetch(`locales/${lang}.json`);
-        if (!response.ok) {
-            throw new Error(`Failed to load language file: ${lang}`);
-        }
-        resources[lang] = await response.json();
-        return true;
-    } catch (error) {
-        console.error('Error loading language file:', error);
-        return false;
-    }
+// Retro pixel cursor (only for desktop)
+const retroCursor = document.getElementById('retro-cursor');
+if (window.matchMedia('(pointer: fine)').matches) {
+  retroCursor.style.display = 'block';
+  document.body.style.cursor = 'none';
+  window.addEventListener('mousemove', e => {
+    retroCursor.style.left = (e.clientX - 2) + 'px';
+    retroCursor.style.top = (e.clientY - 2) + 'px';
+  });
+  // Click feedback
+  window.addEventListener('mousedown', () => {
+    retroCursor.style.transform = 'scale(0.94)';
+  });
+  window.addEventListener('mouseup', () => {
+    retroCursor.style.transform = 'none';
+  });
 }
 
-// Get translation for a key (supports nested keys like "home.title")
-function getTranslation(key, lang) {
-    if (!resources[lang]) {
-        return key;
-    }
+// Interactive pixel "popup" effect
+document.querySelectorAll('.app-card, .member-card').forEach(card => {
+  card.addEventListener('mousedown', e => {
+    card.style.transform = 'scale(0.96)';
+  });
+  card.addEventListener('mouseup', e => {
+    card.style.transform = '';
+  });
+  card.addEventListener('mouseleave', e => {
+    card.style.transform = '';
+  });
+});
 
-    const keys = key.split('.');
-    let result = resources[lang];
-    
-    for (const k of keys) {
-        if (result && result[k] !== undefined) {
-            result = result[k];
-        } else {
-            return key; // Key not found
-        }
-    }
-    
-    return result;
-}
-
-// Update all elements with the data-i18n attribute
-function updateContent(lang) {
-    if (!resources[lang]) {
-        return;
-    }
-    
-    const elements = document.querySelectorAll('[data-i18n]');
-    elements.forEach(element => {
-        const key = element.getAttribute('data-i18n');
-        const translation = getTranslation(key, lang);
-        
-        if (element.tagName === 'META') {
-            element.content = translation;
-        } else if (element.tagName === 'INPUT' && element.type === 'placeholder') {
-            element.placeholder = translation;
-        } else {
-            element.textContent = translation;
-        }
+// Fun: Random "CRT Flicker" effect on section hover
+document.querySelectorAll('section').forEach(section => {
+  section.addEventListener('mouseenter', () => {
+    section.animate([
+      { filter: 'brightness(1) blur(0px)' },
+      { filter: 'brightness(1.3) blur(1px)' },
+      { filter: 'brightness(1) blur(0px)' }
+    ], {
+      duration: 180,
+      easing: 'steps(2, start)'
     });
-    
-    // Update the document language attribute
-    document.documentElement.lang = lang;
-}
+  });
+});
 
-// Detect browser language
-function detectBrowserLanguage() {
-    const browserLang = navigator.language || navigator.userLanguage;
-    if (browserLang && browserLang.startsWith('zh')) {
-        // For Chinese variants, check if it's specifically zh-TW
-        if (browserLang.toLowerCase().includes('tw')) {
-            return 'zh_TW';
-        }
-    }
-    return 'en'; // Default to English for other languages
-}
+// Fun: "Error" shake effect when clicking the logo
+document.querySelector('.logo').addEventListener('click', () => {
+  const logo = document.querySelector('.logo');
+  logo.animate([
+    { transform: 'translate(0,0) rotate(0deg)' },
+    { transform: 'translate(-8px,0) rotate(-4deg)' },
+    { transform: 'translate(8px,0) rotate(4deg)' },
+    { transform: 'translate(-6px,0) rotate(-2deg)' },
+    { transform: 'translate(6px,0) rotate(2deg)' },
+    { transform: 'translate(0,0) rotate(0deg)' },
+  ], {
+    duration: 400,
+    easing: 'ease-in-out'
+  });
+});
 
-// Initialize localization
-async function initLocalization() {
-    // Load default English language
-    await loadLanguage('en');
-    
-    // First check stored preference
-    let preferredLang = localStorage.getItem('preferredLanguage');
-    
-    // If no stored preference, check browser language
-    if (!preferredLang) {
-        preferredLang = detectBrowserLanguage();
-    }
-    
-    // Set current language if it's one we support
-    if (preferredLang && (preferredLang === 'en' || preferredLang === 'zh_TW')) {
-        currentLanguage = preferredLang;
-        await loadLanguage(preferredLang);
-        document.getElementById('language-select').value = preferredLang;
-    }
-    
-    // Update content with current language
-    updateContent(currentLanguage);
-    
-    // Set up language selector
-    const languageSelect = document.getElementById('language-select');
-    languageSelect.addEventListener('change', async (event) => {
-        const newLang = event.target.value;
-        if (newLang !== currentLanguage) {
-            if (!resources[newLang]) {
-                await loadLanguage(newLang);
-            }
-            currentLanguage = newLang;
-            localStorage.setItem('preferredLanguage', newLang);
-            updateContent(newLang);
-        }
-    });
-}
+// Fun: "Pixel sparkle" effect on any click/tap
+document.body.addEventListener('click', e => {
+  if (e.target.id === 'retro-cursor') return;
+  for (let i = 0; i < 8; i++) {
+    pixelSparkle(e.clientX, e.clientY);
+  }
+});
 
-// Initialize when the document is loaded
-document.addEventListener('DOMContentLoaded', initLocalization);
+function pixelSparkle(x, y) {
+  const sparkle = document.createElement('div');
+  sparkle.style.position = 'fixed';
+  sparkle.style.left = `${x + (Math.random() - 0.5) * 22}px`;
+  sparkle.style.top = `${y + (Math.random() - 0.5) * 22}px`;
+  sparkle.style.width = '8px';
+  sparkle.style.height = '8px';
+  sparkle.style.background = Math.random() > 0.5 ? '#fadc60' : '#6c39be';
+  sparkle.style.boxShadow = '0 0 0 2px #fff4';
+  sparkle.style.opacity = '1';
+  sparkle.style.zIndex = 3000;
+  sparkle.style.pointerEvents = 'none';
+  sparkle.style.imageRendering = 'pixelated';
+  sparkle.style.transition = 'opacity 0.4s, transform 0.4s';
+  document.body.appendChild(sparkle);
+  setTimeout(() => {
+    sparkle.style.opacity = '0';
+    sparkle.style.transform = `translateY(${16 + Math.random() * 16}px) scale(0.6)`;
+  }, 10);
+  setTimeout(() => {
+    sparkle.remove();
+  }, 420);
+}
