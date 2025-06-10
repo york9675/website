@@ -1,83 +1,246 @@
-<!--
-'Cause I'm so nostalgic
-
-from Is There Really No Happiness?
-by Porter Robinson
--->
+<!-- TODO: Mobile hamburger menu for navigation links -->
+<!-- TODO: Add some fancy animations -->
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>York Development</title>
-  <link rel="icon" href="https://avatars.githubusercontent.com/u/178259609">
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div id="pixel-overlay"></div>
-  <header>
-    <img src="https://avatars.githubusercontent.com/u/178259609" alt="York Development Logo" class="logo">
-    <h1>York Development</h1>
-    <p class="subtitle">Creating accessible tools that simplify life.</p>
-  </header>
+  <!-- Background pattern -->
+  <svg class="background-pattern" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <pattern id="dottedGrid" width="30" height="30" patternUnits="userSpaceOnUse">
+        <circle cx="2" cy="2" r="1" fill="rgba(0,0,0,0.15)" />
+      </pattern>
+    </defs>
+    <rect width="100%" height="100%" fill="url(#dottedGrid)" />
+  </svg>
 
-  <main>
-    <section class="about">
-      <h2>About Us</h2>
-      <p>
-        York Development is dedicated to creating apps that bring convenience to your daily life. We believe in providing tools that are simple, user-friendly, and accessible to everyone.
-      </p>
-    </section>
+  <!-- Navigation -->
+  <nav class="glass-nav">
+    <div class="container nav-container">
+      <div class="logo-container">
+        <img src="https://avatars.githubusercontent.com/u/178259609" alt="York Development Logo" class="logo">
+        <span class="logo-text">York Development</span>
+      </div>
+      
+      <div class="nav-links">
+        <!-- Replace nav links with glass buttons -->
+        <div class="button-wrap nav-button-wrap">
+          <button onclick="scrollToSection('home')">
+            <span>Home</span>
+          </button>
+          <div class="button-shadow"></div>
+        </div>
+        
+        <div class="button-wrap nav-button-wrap">
+          <button onclick="scrollToSection('about')">
+            <span>About</span>
+          </button>
+          <div class="button-shadow"></div>
+        </div>
+        
+        <div class="button-wrap nav-button-wrap">
+          <button onclick="scrollToSection('team')">
+            <span>Team</span>
+          </button>
+          <div class="button-shadow"></div>
+        </div>
+        
+        <div class="button-wrap nav-button-wrap">
+          <button onclick="scrollToSection('apps')">
+            <span>Apps</span>
+          </button>
+          <div class="button-shadow"></div>
+        </div>
+      </div>
+    </div>
+  </nav>
 
-    <section class="team">
-      <h2>Team Members</h2>
-      <div class="member-card">
-        <img src="https://avatars.githubusercontent.com/u/84720688" alt="York Avatar" class="avatar">
-        <div class="member-info">
-          <h3>York <span>(Founder/Developer)</span></h3>
-          <p class="about">A hobby developer from Taiwan with a passion for creating tools that make life simpler.</p>
-          <div class="links">
-            <a href="https://github.com/york9675" target="_blank" rel="noopener">GitHub</a> |
-            <a href="https://www.buymeacoffee.com/york0524" target="_blank" rel="noopener">Buy Me a Coffee</a>
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="container">
+      <div class="glass-card hero-content">
+        <h1>Creating Apps <span class="highlight">That Simplify Life</span></h1>
+        <p>We build intuitive, user-friendly applications that make your daily tasks more convenient</p>
+        <div class="button-wrap">
+          <button onclick="scrollToSection('apps')">
+            <span>Explore Our Apps</span>
+          </button>
+          <div class="button-shadow"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <div class="container">
+      <div class="section-header">
+        <h2>About Us</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="glass-card about-content">
+        <p>York Development is dedicated to creating apps that bring convenience to your daily life. We believe in providing tools that are simple, user-friendly, and accessible to everyone.</p>
+        <p>Our mission is to develop applications that solve real problems and enhance productivity, while maintaining a clean, intuitive interface that anyone can use.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section id="team" class="team">
+    <div class="container">
+      <div class="section-header">
+        <h2>Our Team</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="glass-card team-member">
+        <div class="team-photo">
+          <img src="https://avatars.githubusercontent.com/u/84720688" alt="York's Photo">
+        </div>
+        <div class="team-info">
+          <h3>York <span class="title">Founder/Developer</span></h3>
+          <p>A hobby developer from Taiwan with a passion for creating tools that make life simpler.</p>
+          <div class="team-links">
+            <!-- GitHub link with glass button -->
+            <div class="button-wrap small-button-wrap">
+              <button onclick="window.open('https://github.com/york9675', '_blank')">
+                <span>GitHub</span>
+              </button>
+              <div class="button-shadow"></div>
+            </div>
+            
+            <!-- Buy Me Coffee link with glass button -->
+            <div class="button-wrap small-button-wrap">
+              <button onclick="window.open('https://www.buymeacoffee.com/york0524', '_blank')">
+                <span>Buy Me a Coffee</span>
+              </button>
+              <div class="button-shadow"></div>
+            </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="apps">
-      <h2>Our Apps</h2>
-      <div class="app-list">
-        <div class="app-card">
+  <!-- Apps Section -->
+  <section id="apps" class="apps">
+    <div class="container">
+      <div class="section-header">
+        <h2>Our Apps</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="apps-grid">
+        <!-- App 1 -->
+        <div class="glass-card app-card">
           <h3>YorkNotify</h3>
           <p>A seamless way to schedule notifications on your iOS devices.</p>
-          <a href="https://york9675.github.io/YorkNotify/" target="_blank" rel="noopener">Learn More</a>
+          <div class="button-wrap small-button-wrap">
+            <button onclick="window.open('https://york9675.github.io/YorkNotify/', '_blank')">
+              <span>Learn More</span>
+            </button>
+            <div class="button-shadow"></div>
+          </div>
         </div>
-        <div class="app-card">
+
+        <!-- App 2 -->
+        <div class="glass-card app-card">
           <h3>Tempo Sync</h3>
           <p>A simple metronome app designed to help musicians keep time while playing.</p>
-          <a href="https://york9675.github.io/Tempo-Sync/" target="_blank" rel="noopener">Learn More</a>
+          <div class="button-wrap small-button-wrap">
+            <button onclick="window.open('https://york9675.github.io/Tempo-Sync/', '_blank')">
+              <span>Learn More</span>
+            </button>
+            <div class="button-shadow"></div>
+          </div>
         </div>
-        <div class="app-card">
+
+        <!-- App 3 -->
+        <div class="glass-card app-card">
           <h3>Tomato Project</h3>
           <p>A simple Pomodoro timer to help you stay focused and productive.</p>
-          <a href="https://york9675.github.io/Tomato-Project/" target="_blank" rel="noopener">Learn More</a>
+          <div class="button-wrap small-button-wrap">
+            <button onclick="window.open('https://york9675.github.io/Tomato-Project/', '_blank')">
+              <span>Learn More</span>
+            </button>
+            <div class="button-shadow"></div>
+          </div>
         </div>
-        <div class="app-card">
+
+        <!-- App 4 -->
+        <div class="glass-card app-card">
           <h3>免費抽獎</h3>
           <p>以抽獎功能為主的機器人。全中文、易使用，包含實用的額外指令！</p>
-          <a href="https://discord.com/discovery/applications/991898054376566875" target="_blank" rel="noopener">Learn More</a>
+          <div class="button-wrap small-button-wrap">
+            <button onclick="window.open('https://discord.com/discovery/applications/991898054376566875', '_blank')">
+              <span>Learn More</span>
+            </button>
+            <div class="button-shadow"></div>
+          </div>
         </div>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
 
-  <footer>
-    <p>© 2025 York Development.<br>Made with ❤️ and nostalgia in Taiwan.</p>
+  <!-- Footer -->
+  <footer class="glass-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="https://avatars.githubusercontent.com/u/178259609" alt="York Development Logo" class="logo small">
+          <span>York Development</span>
+        </div>
+        <div class="footer-links">
+          <!-- Footer links with glass buttons -->
+          <div class="button-wrap small-button-wrap">
+            <button onclick="scrollToSection('home')">
+              <span>Home</span>
+            </button>
+            <div class="button-shadow"></div>
+          </div>
+          
+          <div class="button-wrap small-button-wrap">
+            <button onclick="scrollToSection('about')">
+              <span>About</span>
+            </button>
+            <div class="button-shadow"></div>
+          </div>
+          
+          <div class="button-wrap small-button-wrap">
+            <button onclick="scrollToSection('team')">
+              <span>Team</span>
+            </button>
+            <div class="button-shadow"></div>
+          </div>
+          
+          <div class="button-wrap small-button-wrap">
+            <button onclick="scrollToSection('apps')">
+              <span>Apps</span>
+            </button>
+            <div class="button-shadow"></div>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2025 York Development.</p>
+      </div>
+    </div>
   </footer>
-  <div id="retro-cursor"></div>
-  <canvas id="scanline-canvas"></canvas>
-  <script src="script.js"></script>
+
+  <script>
+    // Smooth scrolling function for anchor links and buttons
+    function scrollToSection(sectionId) {
+      document.getElementById(sectionId).scrollIntoView({
+        behavior: 'smooth'
+      });
+    }
+  </script>
 </body>
 </html>
