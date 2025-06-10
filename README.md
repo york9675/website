@@ -1,6 +1,6 @@
 # York Development Website
 
-![Screenshot](./Screenshot.jpeg)
+![Screenshot](./Screenshot.png)
 
 # Special thanks
 - [Glass Button](https://codepen.io/Petr-Knoll/pen/QwWLZdx) by Petr Knoll
