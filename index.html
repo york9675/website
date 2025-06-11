@@ -1,6 +1,3 @@
-<!-- TODO: Mobile hamburger menu for navigation links -->
-<!-- TODO: Add some fancy animations -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,8 +28,18 @@
         <span class="logo-text">York Development</span>
       </div>
       
-      <div class="nav-links">
-        <!-- Replace nav links with glass buttons -->
+      <!-- Mobile menu toggle button -->
+      <div class="mobile-menu-toggle">
+        <div class="button-wrap nav-button-wrap">
+          <button id="menuToggle">
+            <span>Menu</span>
+          </button>
+          <div class="button-shadow"></div>
+        </div>
+      </div>
+      
+      <!-- Desktop Navigation -->
+      <div class="nav-links desktop-nav">
         <div class="button-wrap nav-button-wrap">
           <button onclick="scrollToSection('home')">
             <span>Home</span>
@@ -63,6 +70,39 @@
       </div>
     </div>
   </nav>
+  
+  <!-- Mobile Navigation Menu Overlay -->
+  <div class="mobile-menu">
+    <div class="mobile-menu-content">
+      <div class="button-wrap mobile-nav-button-wrap">
+        <button onclick="scrollToSection('home'); toggleMobileMenu()">
+          <span>Home</span>
+        </button>
+        <div class="button-shadow"></div>
+      </div>
+      
+      <div class="button-wrap mobile-nav-button-wrap">
+        <button onclick="scrollToSection('about'); toggleMobileMenu()">
+          <span>About</span>
+        </button>
+        <div class="button-shadow"></div>
+      </div>
+      
+      <div class="button-wrap mobile-nav-button-wrap">
+        <button onclick="scrollToSection('team'); toggleMobileMenu()">
+          <span>Team</span>
+        </button>
+        <div class="button-shadow"></div>
+      </div>
+      
+      <div class="button-wrap mobile-nav-button-wrap">
+        <button onclick="scrollToSection('apps'); toggleMobileMenu()">
+          <span>Apps</span>
+        </button>
+        <div class="button-shadow"></div>
+      </div>
+    </div>
+  </div>
 
   <!-- Hero Section -->
   <section id="home" class="hero">
@@ -198,7 +238,6 @@
           <span>York Development</span>
         </div>
         <div class="footer-links">
-          <!-- Footer links with glass buttons -->
           <div class="button-wrap small-button-wrap">
             <button onclick="scrollToSection('home')">
               <span>Home</span>
@@ -229,7 +268,9 @@
         </div>
       </div>
       <div class="copyright">
-        <p>&copy; 2025 York Development.</p>
+        <p>&copy; 2025 York Development<br>
+          Special thanks to <a href="https://codepen.io/Petr-Knoll/pen/QwWLZdx" target="_blank" rel="noopener">Glass Button</a> by Petr Knoll
+        </p>
       </div>
     </div>
   </footer>
@@ -241,6 +282,27 @@
         behavior: 'smooth'
       });
     }
+    
+    // Mobile menu toggle
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const menuToggle = document.getElementById('menuToggle');
+    
+    function toggleMobileMenu() {
+      mobileMenu.classList.toggle('active');
+      document.body.classList.toggle('no-scroll');
+    }
+    
+    menuToggle.addEventListener('click', toggleMobileMenu);
+    
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(event) {
+      const isClickInside = mobileMenu.contains(event.target) || 
+                           menuToggle.contains(event.target);
+      
+      if (!isClickInside && mobileMenu.classList.contains('active')) {
+        toggleMobileMenu();
+      }
+    });
   </script>
 </body>
 </html>

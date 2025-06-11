@@ -59,6 +59,10 @@ body {
   overflow-x: hidden;
 }
 
+body.no-scroll {
+  overflow: hidden;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
   line-height: 1.2;
@@ -113,9 +117,9 @@ a {
 .glass-card, .glass-nav, .glass-footer {
   background: linear-gradient(
     -75deg,
-    rgba(255, 255, 255, 0.05),
-    rgba(255, 255, 255, 0.2),
-    rgba(255, 255, 255, 0.05)
+    rgba(255, 255, 255, 0.03),
+    rgba(255, 255, 255, 0.15),
+    rgba(255, 255, 255, 0.03)
   );
   border-radius: var(--border-radius-md);
   box-shadow: inset 0 0.125em 0.125em rgba(0, 0, 0, 0.05),
@@ -135,16 +139,26 @@ a {
   margin-bottom: var(--spacing-lg);
   transform: translateY(0);
   transition: transform var(--anim--hover-time) var(--anim--hover-ease),
-              box-shadow var(--anim--hover-time) var(--anim--hover-ease);
+              box-shadow var(--anim--hover-time) var(--anim--hover-ease),
+              background var(--anim--hover-time) var(--anim--hover-ease),
+              backdrop-filter var(--anim--hover-time) var(--anim--hover-ease);
 }
 
-/* Add floating effect to cards on hover */
+/* Add floating effect and more transparency to cards on hover */
 .glass-card:hover {
   transform: translateY(-10px);
   box-shadow: inset 0 0.125em 0.125em rgba(0, 0, 0, 0.05),
     inset 0 -0.125em 0.125em rgba(255, 255, 255, 0.5),
     0 15px 25px -10px rgba(0, 0, 0, 0.25),
     0 0 0.1em 0.25em inset rgba(255, 255, 255, 0.2);
+  background: linear-gradient(
+    -75deg,
+    rgba(255, 255, 255, 0.01),
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.01)
+  );
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
 }
 
 .glass-card::after {
@@ -228,6 +242,49 @@ a {
   display: flex;
   gap: var(--spacing-md);
   align-items: center;
+}
+
+/* Mobile menu toggle */
+.mobile-menu-toggle {
+  display: none;
+}
+
+/* ========== MOBILE MENU ========== */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(215, 215, 215, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.mobile-menu.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile-menu-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-lg);
+  padding: var(--spacing-xl) 0;
+}
+
+.mobile-nav-button-wrap button span {
+  font-size: 1.2em;
+  padding-inline: 2em;
+  padding-block: 0.8em;
 }
 
 /* ========== HERO SECTION ========== */
@@ -314,6 +371,7 @@ section {
   display: flex;
   gap: var(--spacing-sm);
   margin-top: var(--spacing-md);
+  flex-wrap: wrap;
 }
 
 /* ========== APPS SECTION ========== */
@@ -365,6 +423,7 @@ section {
 .footer-links {
   display: flex;
   gap: var(--spacing-md);
+  flex-wrap: wrap;
 }
 
 .copyright {
@@ -452,21 +511,38 @@ button {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   pointer-events: auto;
   z-index: 3;
-  background: linear-gradient(
-    -75deg,
-    rgba(255, 255, 255, 0.05),
-    rgba(255, 255, 255, 0.2),
-    rgba(255, 255, 255, 0.05)
-  );
+  /* Adjusted background for better Safari compatibility */
+  background: rgba(255, 255, 255, 0.1);
   border-radius: 999vw;
   box-shadow: inset 0 0.125em 0.125em rgba(0, 0, 0, 0.05),
     inset 0 -0.125em 0.125em rgba(255, 255, 255, 0.5),
     0 0.25em 0.125em -0.125em rgba(0, 0, 0, 0.2),
-    0 0 0.1em 0.25em inset rgba(255, 255, 255, 0.2),
-    0 0 0 0 rgba(255, 255, 255, 1);
+    0 0 0.1em 0.25em inset rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(clamp(1px, 0.125em, 4px));
   -webkit-backdrop-filter: blur(clamp(1px, 0.125em, 4px));
   transition: all var(--anim--hover-time) var(--anim--hover-ease);
+}
+
+/* Safari-specific fixes */
+@media not all and (min-resolution:.001dpcm) { 
+  @supports (-webkit-appearance:none) {
+    button {
+      background: linear-gradient(
+        -75deg,
+        rgba(255, 255, 255, 0.15),
+        rgba(255, 255, 255, 0.35),
+        rgba(255, 255, 255, 0.15)
+      );
+    }
+    
+    button::after {
+      opacity: 0.9;
+    }
+    
+    .button-shadow::after {
+      opacity: 0.8;
+    }
+  }
 }
 
 button:hover {
@@ -476,8 +552,7 @@ button:hover {
   box-shadow: inset 0 0.125em 0.125em rgba(0, 0, 0, 0.05),
     inset 0 -0.125em 0.125em rgba(255, 255, 255, 0.5),
     0 0.15em 0.05em -0.1em rgba(0, 0, 0, 0.25),
-    0 0 0.05em 0.1em inset rgba(255, 255, 255, 0.5),
-    0 0 0 0 rgba(255, 255, 255, 1);
+    0 0 0.05em 0.1em inset rgba(255, 255, 255, 0.5);
 }
 
 /* Button Text */
@@ -644,8 +719,21 @@ button:active::after {
     gap: var(--spacing-lg);
   }
   
-  .nav-links {
-    display: none; /* TODO: Mobile hamburger menu */
+  /* Hide desktop nav and show mobile menu toggle on mobile */
+  .desktop-nav {
+    display: none;
+  }
+  
+  .mobile-menu-toggle {
+    display: block;
+  }
+  
+  .footer-links {
+    justify-content: center;
+  }
+  
+  .team-links {
+    justify-content: center;
   }
 }
 
@@ -665,5 +753,14 @@ button:active::after {
   button span::after,
   button:active span::after {
     --angle-2: -45deg;
+  }
+  
+  /* Extra fixes for mobile cards */
+  .glass-card:hover {
+    transform: translateY(0);
+    box-shadow: inset 0 0.125em 0.125em rgba(0, 0, 0, 0.05),
+      inset 0 -0.125em 0.125em rgba(255, 255, 255, 0.5),
+      0 0.25em 0.125em -0.125em rgba(0, 0, 0, 0.2),
+      0 0 0.1em 0.25em inset rgba(255, 255, 255, 0.2);
   }
 }
