@@ -126,8 +126,8 @@ a {
     inset 0 -0.125em 0.125em rgba(255, 255, 255, 0.5),
     0 0.25em 0.125em -0.125em rgba(0, 0, 0, 0.2),
     0 0 0.1em 0.25em inset rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(clamp(1px, 0.125em, 4px));
   -webkit-backdrop-filter: blur(clamp(1px, 0.125em, 4px));
+  backdrop-filter: blur(clamp(1px, 0.125em, 4px));
   position: relative;
   transition: all var(--anim--hover-time) var(--anim--hover-ease);
   overflow: hidden;
@@ -157,8 +157,8 @@ a {
     rgba(255, 255, 255, 0.1),
     rgba(255, 255, 255, 0.01)
   );
-  backdrop-filter: blur(2px);
   -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
 }
 
 .glass-card::after {
@@ -203,8 +203,8 @@ a {
   z-index: 1000;
   padding: var(--spacing-md) 0;
   border-radius: 0;
-  backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
 }
 
 .nav-container {
@@ -257,8 +257,8 @@ a {
   width: 100%;
   height: 100%;
   background: rgba(215, 215, 215, 0.6);
-  backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   z-index: 999;
   display: flex;
   justify-content: center;
@@ -475,8 +475,8 @@ section {
   height: calc(100% + var(--shadow-cuttoff-fix));
   top: calc(0% - var(--shadow-cuttoff-fix) / 2);
   left: calc(0% - var(--shadow-cuttoff-fix) / 2);
-  filter: blur(clamp(2px, 0.125em, 12px));
   -webkit-filter: blur(clamp(2px, 0.125em, 12px));
+  filter: blur(clamp(2px, 0.125em, 12px));
   overflow: visible;
   pointer-events: none;
 }
@@ -518,8 +518,8 @@ button {
     inset 0 -0.125em 0.125em rgba(255, 255, 255, 0.5),
     0 0.25em 0.125em -0.125em rgba(0, 0, 0, 0.2),
     0 0 0.1em 0.25em inset rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(clamp(1px, 0.125em, 4px));
   -webkit-backdrop-filter: blur(clamp(1px, 0.125em, 4px));
+  backdrop-filter: blur(clamp(1px, 0.125em, 4px));
   transition: all var(--anim--hover-time) var(--anim--hover-ease);
 }
 
@@ -547,8 +547,8 @@ button {
 
 button:hover {
   transform: scale(0.975);
-  backdrop-filter: blur(0.01em);
   -webkit-backdrop-filter: blur(0.01em);
+  backdrop-filter: blur(0.01em);
   box-shadow: inset 0 0.125em 0.125em rgba(0, 0, 0, 0.05),
     inset 0 -0.125em 0.125em rgba(255, 255, 255, 0.5),
     0 0.15em 0.05em -0.1em rgba(0, 0, 0, 0.25),
@@ -559,8 +559,8 @@ button:hover {
 button span {
   position: relative;
   display: block;
-  user-select: none;
   -webkit-user-select: none;
+  user-select: none;
   font-family: "Inter", sans-serif;
   letter-spacing: -0.05em;
   font-weight: 500;
@@ -656,8 +656,8 @@ button:active::after {
 
 /* Shadow Hover */
 .button-wrap:has(button:hover) .button-shadow {
-  filter: blur(clamp(2px, 0.0625em, 6px));
   -webkit-filter: blur(clamp(2px, 0.0625em, 6px));
+  filter: blur(clamp(2px, 0.0625em, 6px));
   transition: filter var(--anim--hover-time) var(--anim--hover-ease);
 }
 
@@ -682,8 +682,8 @@ button:active::after {
 }
 
 .button-wrap:has(button:active) .button-shadow {
-  filter: blur(clamp(2px, 0.125em, 12px));
   -webkit-filter: blur(clamp(2px, 0.125em, 12px));
+  filter: blur(clamp(2px, 0.125em, 12px));
 }
 
 .button-wrap:has(button:active) .button-shadow::after {
