@@ -1,29 +1,237 @@
-<h1>Terms of Service</h1>
-<h2>Last Updated: 2023-11-1</h2>
-<p>By using "York Development Apps" (hereinafter referred to as "this service"), you agree to comply with the terms of use of this service. Additionally, you must adhere to the terms of service of "Discord" (hereinafter referred to as "the platform").</p>
-<p>Our terms aim to maintain a welcoming and safe environment for all users, so please carefully review these terms to avoid any loss of your rights.</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms of Service - York Development</title>
+  <link rel="icon" type="image/png" href="https://avatars.githubusercontent.com/u/178259609">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Background pattern -->
+  <svg class="background-pattern" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <pattern id="dottedGrid" width="30" height="30" patternUnits="userSpaceOnUse">
+        <circle cx="2" cy="2" r="1" fill="rgba(0,0,0,0.15)" />
+      </pattern>
+    </defs>
+    <rect width="100%" height="100%" fill="url(#dottedGrid)" />
+  </svg>
 
-<h3>1. Use of This Service</h3>
-<p>When using this service, any content you post, upload, share, or store on the platform, including text, images, and other formats, must comply with the platform's terms of service and adhere to legal regulations.</p>
-<p>You agree not to publish, upload, share, store, or otherwise provide any user-submitted content through the service that:</p>
-<ul>
-<li>Infringes on the copyright or other rights (e.g., trademarks, privacy rights) of any third party.</li>
-<li>Contains pornographic content.</li>
-<li>Contains hateful, defamatory, discriminatory, or incites hatred toward any individual or group.</li>
-<li>Exploits minors.</li>
-<li>Depicts illegal activities or extreme violence.</li>
-<li>Depicts animal abuse or acts of extreme violence toward animals.</li>
-<li>Promotes fraudulent schemes, multi-level marketing (MLM) plans, get-rich-quick schemes, online gambling, cash giveaways, work-from-home opportunities, or any other suspicious money-making enterprises.</li>
-<li>Violates the law or the platform’s terms of service.</li>
-</ul>
-<p>If you are penalized or prosecuted by this service or the platform for posting such content (including warnings, deletion of player data, or account termination), you bear full responsibility. The content you post does not represent the position of this service.</p>
-<p>We reserve the right to monitor the usage of the group. If you do not wish to be tracked, you can disable the permissions provided by the platform.</p>
+  <!-- Navigation -->
+  <nav class="glass-nav">
+    <div class="container nav-container">
+      <div class="logo-container">
+        <img src="https://avatars.githubusercontent.com/u/178259609" alt="York Development Logo" class="logo">
+        <span class="logo-text">York Development</span>
+      </div>
+      
+      <!-- Mobile menu toggle button -->
+      <div class="mobile-menu-toggle">
+        <div class="button-wrap nav-button-wrap">
+          <button id="menuToggle">
+            <span>Menu</span>
+          </button>
+          <div class="button-shadow"></div>
+        </div>
+      </div>
+      
+      <!-- Desktop Navigation -->
+      <div class="nav-links desktop-nav">
+        <div class="button-wrap nav-button-wrap">
+          <button onclick="window.location.href='index.html#home'">
+            <span>Home</span>
+          </button>
+          <div class="button-shadow"></div>
+        </div>
+        
+        <div class="button-wrap nav-button-wrap">
+          <button onclick="window.location.href='index.html#about'">
+            <span>About</span>
+          </button>
+          <div class="button-shadow"></div>
+        </div>
+        
+        <div class="button-wrap nav-button-wrap">
+          <button onclick="window.location.href='index.html#team'">
+            <span>Team</span>
+          </button>
+          <div class="button-shadow"></div>
+        </div>
+        
+        <div class="button-wrap nav-button-wrap">
+          <button onclick="window.location.href='index.html#apps'">
+            <span>Apps</span>
+          </button>
+          <div class="button-shadow"></div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- Mobile Navigation Menu Overlay -->
+  <div class="mobile-menu">
+    <div class="mobile-menu-content">
+      <div class="button-wrap mobile-nav-button-wrap">
+        <button onclick="window.location.href='index.html#home'; toggleMobileMenu()">
+          <span>Home</span>
+        </button>
+        <div class="button-shadow"></div>
+      </div>
+      
+      <div class="button-wrap mobile-nav-button-wrap">
+        <button onclick="window.location.href='index.html#about'; toggleMobileMenu()">
+          <span>About</span>
+        </button>
+        <div class="button-shadow"></div>
+      </div>
+      
+      <div class="button-wrap mobile-nav-button-wrap">
+        <button onclick="window.location.href='index.html#team'; toggleMobileMenu()">
+          <span>Team</span>
+        </button>
+        <div class="button-shadow"></div>
+      </div>
+      
+      <div class="button-wrap mobile-nav-button-wrap">
+        <button onclick="window.location.href='index.html#apps'; toggleMobileMenu()">
+          <span>Apps</span>
+        </button>
+        <div class="button-shadow"></div>
+      </div>
+    </div>
+  </div>
 
-<h3>2. Fair Use</h3>
-<p>When using any features provided by this service, you agree not to use scripts, auto-clickers, plugins, or other third-party programs, or exploit any vulnerabilities in the features to cause instability or disruption to the service. We reserve the right to investigate the usage of any features by users.</p>
+  <!-- Terms of Service Header -->
+  <section class="policy-header">
+    <div class="container">
+      <div class="glass-card policy-title">
+        <h1>Terms of Service</h1>
+        <div class="divider"></div>
+        <p class="last-updated">Last Updated: <span class="highlight">2023-11-1</span></p>
+      </div>
+    </div>
+  </section>
 
-<h3>3. Privacy Policy</h3>
-<p>By using this service, you agree to the Privacy Policy of this service.</p>
+  <!-- Terms of Service Content -->
+  <section class="policy-content">
+    <div class="container">
+      <div class="glass-card">
+        <p>By using "York Development Apps" (hereinafter referred to as "this service"), you agree to comply with the terms of use of this service. Additionally, you must adhere to the terms of service of "Discord" (hereinafter referred to as "the platform").</p>
+        <p>Our terms aim to maintain a welcoming and safe environment for all users, so please carefully review these terms to avoid any loss of your rights.</p>
+        
+        <h3>1. Use of This Service</h3>
+        <p>When using this service, any content you post, upload, share, or store on the platform, including text, images, and other formats, must comply with the platform's terms of service and adhere to legal regulations.</p>
+        <p>You agree not to publish, upload, share, store, or otherwise provide any user-submitted content through the service that:</p>
+        <ul>
+          <li>Infringes on the copyright or other rights (e.g., trademarks, privacy rights) of any third party.</li>
+          <li>Contains pornographic content.</li>
+          <li>Contains hateful, defamatory, discriminatory, or incites hatred toward any individual or group.</li>
+          <li>Exploits minors.</li>
+          <li>Depicts illegal activities or extreme violence.</li>
+          <li>Depicts animal abuse or acts of extreme violence toward animals.</li>
+          <li>Promotes fraudulent schemes, multi-level marketing (MLM) plans, get-rich-quick schemes, online gambling, cash giveaways, work-from-home opportunities, or any other suspicious money-making enterprises.</li>
+          <li>Violates the law or the platform's terms of service.</li>
+        </ul>
 
-<h3>4. Amendments to the Terms of Service</h3>
-<p>The terms of service of this service may be amended as needed and will be published on the website. Announcements may also be made in the support groups as necessary.</p>
+        <p>If you are penalized or prosecuted by this service or the platform for posting such content (including warnings, deletion of player data, or account termination), you bear full responsibility. The content you post does not represent the position of this service.</p>
+        <p>We reserve the right to monitor the usage of the group. If you do not wish to be tracked, you can disable the permissions provided by the platform.</p>
+
+        <h3>2. Fair Use</h3>
+        <p>When using any features provided by this service, you agree not to use scripts, auto-clickers, plugins, or other third-party programs, or exploit any vulnerabilities in the features to cause instability or disruption to the service. We reserve the right to investigate the usage of any features by users.</p>
+
+        <h3>3. Privacy Policy</h3>
+        <p>By using this service, you agree to the <a href="privacy-policy.html">Privacy Policy</a> of this service.</p>
+
+        <h3>4. Amendments to the Terms of Service</h3>
+        <p>The terms of service of this service may be amended as needed and will be published on the website. Announcements may also be made in the support groups as necessary.</p>
+      </div>
+
+      <div class="button-container">
+        <div class="button-wrap">
+          <button onclick="window.location.href='index.html'">
+            <span>Return to Home</span>
+          </button>
+          <div class="button-shadow"></div>
+        </div>
+        
+        <div class="button-wrap">
+          <button onclick="window.location.href='privacy-policy.html'">
+            <span>View Privacy Policy</span>
+          </button>
+          <div class="button-shadow"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="glass-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="https://avatars.githubusercontent.com/u/178259609" alt="York Development Logo" class="logo small">
+          <span>York Development</span>
+        </div>
+        <div class="footer-links">
+          <div class="button-wrap small-button-wrap">
+            <button onclick="window.location.href='index.html#home'">
+              <span>Home</span>
+            </button>
+            <div class="button-shadow"></div>
+          </div>
+          
+          <div class="button-wrap small-button-wrap">
+            <button onclick="window.location.href='privacy-policy.html'">
+              <span>Privacy Policy</span>
+            </button>
+            <div class="button-shadow"></div>
+          </div>
+          
+          <div class="button-wrap small-button-wrap">
+            <button onclick="window.location.href='terms-of-service.html'">
+              <span>Terms of Service</span>
+            </button>
+            <div class="button-shadow"></div>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>
+          &copy; 2025 York Development
+          <br>
+          Special thanks to <a href="https://codepen.io/Petr-Knoll/pen/QwWLZdx" target="_blank" rel="noopener">Glass Button</a> by Petr Knoll
+          <br>
+          View this website's source code on <a href="https://github.com/york9675/website" target="_blank" rel="noopener">GitHub</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const menuToggle = document.getElementById('menuToggle');
+    
+    function toggleMobileMenu() {
+      mobileMenu.classList.toggle('active');
+      document.body.classList.toggle('no-scroll');
+    }
+    
+    menuToggle.addEventListener('click', toggleMobileMenu);
+    
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(event) {
+      const isClickInside = mobileMenu.contains(event.target) || 
+                           menuToggle.contains(event.target);
+      
+      if (!isClickInside && mobileMenu.classList.contains('active')) {
+        toggleMobileMenu();
+      }
+    });
+  </script>
+</body>
+</html>

@@ -764,3 +764,70 @@ button:active::after {
       0 0 0.1em 0.25em inset rgba(255, 255, 255, 0.2);
   }
 }
+
+/* ========== POLICY PAGES STYLES ========== */
+.policy-header {
+  padding-top: 120px;
+  padding-bottom: var(--spacing-lg);
+}
+
+.policy-title {
+  text-align: center;
+}
+
+.policy-title h1 {
+  margin-bottom: var(--spacing-sm);
+}
+
+.last-updated {
+  font-size: 0.9em;
+  color: var(--text-color-light);
+  margin-top: var(--spacing-md);
+}
+
+.policy-content {
+  padding-top: var(--spacing-md);
+  padding-bottom: var(--spacing-xl);
+}
+
+.policy-content .glass-card {
+  margin-bottom: var(--spacing-lg);
+}
+
+.policy-content h3 {
+  margin-top: var(--spacing-lg);
+  margin-bottom: var(--spacing-sm);
+}
+
+.policy-content h3:first-child {
+  margin-top: 0;
+}
+
+.policy-content ul {
+  padding-left: 1.5rem;
+  margin-bottom: var(--spacing-md);
+}
+
+.policy-content ul li {
+  margin-bottom: 0.5rem;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-xl);
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .policy-header {
+    padding-top: 100px;
+  }
+  
+  .button-container {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-md);
+  }
+}

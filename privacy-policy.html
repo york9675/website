@@ -1,37 +1,244 @@
-<h1>Privacy Policy</h1>
-<h2>Last Updated: 2023-11-01</h2>
-<p>Welcome to "York Development Apps" (hereinafter referred to as "this service"). To ensure you can use the various services and information provided by this service with peace of mind, we hereby explain our privacy policy to protect your rights. Please carefully read the following content:</p> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy - York Development</title>
+  <link rel="icon" type="image/png" href="https://avatars.githubusercontent.com/u/178259609">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Background pattern -->
+  <svg class="background-pattern" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <pattern id="dottedGrid" width="30" height="30" patternUnits="userSpaceOnUse">
+        <circle cx="2" cy="2" r="1" fill="rgba(0,0,0,0.15)" />
+      </pattern>
+    </defs>
+    <rect width="100%" height="100%" fill="url(#dottedGrid)" />
+  </svg>
 
-<h3>1. Scope of the Privacy Policy</h3>
-<p>The content of the privacy policy includes how this service handles personal identification information collected while you use the website services. This privacy policy does not apply to websites linked to this service, nor does it apply to personnel not commissioned or involved in the management of this service.</p>
+  <!-- Navigation -->
+  <nav class="glass-nav">
+    <div class="container nav-container">
+      <div class="logo-container">
+        <img src="https://avatars.githubusercontent.com/u/178259609" alt="York Development Logo" class="logo">
+        <span class="logo-text">York Development</span>
+      </div>
+      
+      <!-- Mobile menu toggle button -->
+      <div class="mobile-menu-toggle">
+        <div class="button-wrap nav-button-wrap">
+          <button id="menuToggle">
+            <span>Menu</span>
+          </button>
+          <div class="button-shadow"></div>
+        </div>
+      </div>
+      
+      <!-- Desktop Navigation -->
+      <div class="nav-links desktop-nav">
+        <div class="button-wrap nav-button-wrap">
+          <button onclick="window.location.href='index.html#home'">
+            <span>Home</span>
+          </button>
+          <div class="button-shadow"></div>
+        </div>
+        
+        <div class="button-wrap nav-button-wrap">
+          <button onclick="window.location.href='index.html#about'">
+            <span>About</span>
+          </button>
+          <div class="button-shadow"></div>
+        </div>
+        
+        <div class="button-wrap nav-button-wrap">
+          <button onclick="window.location.href='index.html#team'">
+            <span>Team</span>
+          </button>
+          <div class="button-shadow"></div>
+        </div>
+        
+        <div class="button-wrap nav-button-wrap">
+          <button onclick="window.location.href='index.html#apps'">
+            <span>Apps</span>
+          </button>
+          <div class="button-shadow"></div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- Mobile Navigation Menu Overlay -->
+  <div class="mobile-menu">
+    <div class="mobile-menu-content">
+      <div class="button-wrap mobile-nav-button-wrap">
+        <button onclick="window.location.href='index.html#home'; toggleMobileMenu()">
+          <span>Home</span>
+        </button>
+        <div class="button-shadow"></div>
+      </div>
+      
+      <div class="button-wrap mobile-nav-button-wrap">
+        <button onclick="window.location.href='index.html#about'; toggleMobileMenu()">
+          <span>About</span>
+        </button>
+        <div class="button-shadow"></div>
+      </div>
+      
+      <div class="button-wrap mobile-nav-button-wrap">
+        <button onclick="window.location.href='index.html#team'; toggleMobileMenu()">
+          <span>Team</span>
+        </button>
+        <div class="button-shadow"></div>
+      </div>
+      
+      <div class="button-wrap mobile-nav-button-wrap">
+        <button onclick="window.location.href='index.html#apps'; toggleMobileMenu()">
+          <span>Apps</span>
+        </button>
+        <div class="button-shadow"></div>
+      </div>
+    </div>
+  </div>
 
-<h3>2. Collection, Processing, and Use of Personal Data</h3>
-<p>When you visit this service or use the features provided, we may request necessary personal information based on the nature of the service. Your personal data will only be processed and used within the scope of the specific purpose. Without your consent, this service will not use your personal data for other purposes.
-This service retains your identification data when you send messages or use the features of this service, which is used for identity verification.
-During general browsing, the server automatically records relevant data, including the IP address of your device, time of use, browser used, browsing and clicking records, etc., as a reference for improving website services. These records are for internal use only and will never be disclosed.
-You may request at any time to correct or delete erroneous or incomplete personal data collected by this service.</p>
+  <!-- Privacy Policy Header -->
+  <section class="policy-header">
+    <div class="container">
+      <div class="glass-card policy-title">
+        <h1>Privacy Policy</h1>
+        <div class="divider"></div>
+        <p class="last-updated">Last Updated: <span class="highlight">2023-11-1</span></p>
+      </div>
+    </div>
+  </section>
 
-<h3>3. Data Protection</h3>
-<p>The servers of this service are equipped with firewalls, information security devices, and necessary protective measures to safeguard the website and your personal data. Strict protection measures are applied, and only authorized personnel can access your personal data. All relevant personnel are bound by confidentiality agreements and will be subject to legal consequences if they breach these obligations.
-If it is necessary to entrust other units to provide services due to business needs, this service will strictly require them to comply with confidentiality obligations and perform necessary checks to ensure compliance.</p>
+  <!-- Privacy Policy Content -->
+  <section class="policy-content">
+    <div class="container">
+      <div class="glass-card">
+        <p>Welcome to "York Development Apps" (hereinafter referred to as "this service"). To ensure you can use the various services and information provided by this service with peace of mind, we hereby explain our privacy policy to protect your rights. Please carefully read the following content:</p>
+        
+        <h3>1. Scope of the Privacy Policy</h3>
+        <p>The content of the privacy policy includes how this service handles personal identification information collected while you use the website services. This privacy policy does not apply to websites linked to this service, nor does it apply to personnel not commissioned or involved in the management of this service.</p>
 
-<h3>4. External Links</h3>
-<p>The webpages of this service provide links to other websites. You can access other websites via the links provided by this service. However, the privacy policy of this service does not apply to these linked websites. You must refer to the privacy policy of the respective linked website.</p>
+        <h3>2. Collection, Processing, and Use of Personal Data</h3>
+        <p>When you visit this service or use the features provided, we may request necessary personal information based on the nature of the service. Your personal data will only be processed and used within the scope of the specific purpose. Without your consent, this service will not use your personal data for other purposes.</p>
+        <p>This service retains your identification data when you send messages or use the features of this service, which is used for identity verification.</p>
+        <p>During general browsing, the server automatically records relevant data, including the IP address of your device, time of use, browser used, browsing and clicking records, etc., as a reference for improving website services. These records are for internal use only and will never be disclosed.</p>
+        <p>You may request at any time to correct or delete erroneous or incomplete personal data collected by this service.</p>
 
-<h3>5. Policy on Sharing Personal Data with Third Parties</h3>
-<p>This service will never provide, exchange, rent, or sell any of your personal data to individuals, groups, private companies, or public agencies, except where there are legal bases or contractual obligations.</p>
-<p>The exceptions include but are not limited to:</p>
-<ul>
-<li>With your written consent.</li>
-<li>Explicitly required by law.</li>
-<li>To prevent harm to your life, body, freedom, or property.</li>
-<li>Cooperation with public agencies or academic research institutions, where it is necessary for public interest, statistics, or academic research, and the data has been processed to ensure it cannot identify specific individuals.</li>
-</ul>
-<p>When your behavior on the website violates the terms of service or may harm the rights of the website, other users, or result in harm to anyone, this service may disclose your personal data as necessary for identification, contact, or legal action.
-For the benefit of your rights, this service will monitor and manage vendors or individuals entrusted to collect, process, or use your personal data.</p>
+        <h3>3. Data Protection</h3>
+        <p>The servers of this service are equipped with firewalls, information security devices, and necessary protective measures to safeguard the website and your personal data. Strict protection measures are applied, and only authorized personnel can access your personal data. All relevant personnel are bound by confidentiality agreements and will be subject to legal consequences if they breach these obligations.</p>
+        <p>If it is necessary to entrust other units to provide services due to business needs, this service will strictly require them to comply with confidentiality obligations and perform necessary checks to ensure compliance.</p>
 
-<h3>6. Use of Cookies</h3>
-<p>To provide you with the best service, this service will place and access cookies on your computer. If you do not wish to accept cookies, you can set the privacy level of your browser to "high" to refuse cookies. However, this may result in some website functions not operating properly.</p>
+        <h3>4. External Links</h3>
+        <p>The webpages of this service provide links to other websites. You can access other websites via the links provided by this service. However, the privacy policy of this service does not apply to these linked websites. You must refer to the privacy policy of the respective linked website.</p>
 
-<h3>7. Amendments to the Privacy Policy</h3>
-<p>The privacy policy of this service may be amended as needed and will be published on the website after modification.</p>
+        <h3>5. Policy on Sharing Personal Data with Third Parties</h3>
+        <p>This service will never provide, exchange, rent, or sell any of your personal data to individuals, groups, private companies, or public agencies, except where there are legal bases or contractual obligations.</p>
+        <p>The exceptions include but are not limited to:</p>
+        <ul>
+          <li>With your written consent.</li>
+          <li>Explicitly required by law.</li>
+          <li>To prevent harm to your life, body, freedom, or property.</li>
+          <li>Cooperation with public agencies or academic research institutions, where it is necessary for public interest, statistics, or academic research, and the data has been processed to ensure it cannot identify specific individuals.</li>
+        </ul>
+        <p>When your behavior on the website violates the terms of service or may harm the rights of the website, other users, or result in harm to anyone, this service may disclose your personal data as necessary for identification, contact, or legal action.</p>
+        <p>For the benefit of your rights, this service will monitor and manage vendors or individuals entrusted to collect, process, or use your personal data.</p>
+
+        <h3>6. Use of Cookies</h3>
+        <p>To provide you with the best service, this service will place and access cookies on your computer. If you do not wish to accept cookies, you can set the privacy level of your browser to "high" to refuse cookies. However, this may result in some website functions not operating properly.</p>
+
+        <h3>7. Amendments to the Privacy Policy</h3>
+        <p>The privacy policy of this service may be amended as needed and will be published on the website after modification.</p>
+      </div>
+
+      <div class="button-container">
+        <div class="button-wrap">
+          <button onclick="window.location.href='index.html'">
+            <span>Return to Home</span>
+          </button>
+          <div class="button-shadow"></div>
+        </div>
+        
+        <div class="button-wrap">
+          <button onclick="window.location.href='terms-of-service.html'">
+            <span>View Terms of Service</span>
+          </button>
+          <div class="button-shadow"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="glass-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="https://avatars.githubusercontent.com/u/178259609" alt="York Development Logo" class="logo small">
+          <span>York Development</span>
+        </div>
+        <div class="footer-links">
+          <div class="button-wrap small-button-wrap">
+            <button onclick="window.location.href='index.html#home'">
+              <span>Home</span>
+            </button>
+            <div class="button-shadow"></div>
+          </div>
+          
+          <div class="button-wrap small-button-wrap">
+            <button onclick="window.location.href='privacy-policy.html'">
+              <span>Privacy Policy</span>
+            </button>
+            <div class="button-shadow"></div>
+          </div>
+          
+          <div class="button-wrap small-button-wrap">
+            <button onclick="window.location.href='terms-of-service.html'">
+              <span>Terms of Service</span>
+            </button>
+            <div class="button-shadow"></div>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>
+          &copy; 2025 York Development
+          <br>
+          Special thanks to <a href="https://codepen.io/Petr-Knoll/pen/QwWLZdx" target="_blank" rel="noopener">Glass Button</a> by Petr Knoll
+          <br>
+          View this website's source code on <a href="https://github.com/york9675/website" target="_blank" rel="noopener">GitHub</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const menuToggle = document.getElementById('menuToggle');
+    
+    function toggleMobileMenu() {
+      mobileMenu.classList.toggle('active');
+      document.body.classList.toggle('no-scroll');
+    }
+    
+    menuToggle.addEventListener('click', toggleMobileMenu);
+    
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(event) {
+      const isClickInside = mobileMenu.contains(event.target) || 
+                           menuToggle.contains(event.target);
+      
+      if (!isClickInside && mobileMenu.classList.contains('active')) {
+        toggleMobileMenu();
+      }
+    });
+  </script>
+</body>
+</html>
